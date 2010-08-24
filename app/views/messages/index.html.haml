@@ -1,0 +1,22 @@
+%h1= t('.title')
+%p= link_to t('.new_message'), new_message_path
+
+%table
+  %thead
+    %tr
+      %th= Message.human_attribute_name :title
+      %th= Message.human_attribute_name :content
+      %th= Message.human_attribute_name :published
+      %th{:colspan => 3}= t 'actions'
+  
+  %tbody
+    - for message in @messages
+      %tr{ :class => cycle(:odd, :even) }
+        %td= message.title
+        %td= message.content
+        %td= message.published
+        %td.action= link_to t('show'), message
+        %td.action= link_to t('edit'), edit_message_path(message)
+        %td.action= link_to t('destroy'), message, :confirm => t('are_you_sure'), :method => :delete
+
+= will_paginate(@messages)

@@ -1,0 +1,12 @@
+%h1= t '.title'
+%p
+  = link_to t('back'), messages_path
+  = link_to t('edit'), edit_message_path(@message)
+
+%dl
+  %dt= Message.human_attribute_name :title
+  %dd= @message.title
+  %dt= Message.human_attribute_name :content
+  %dd= @message.content
+  %dt= Message.human_attribute_name :published
+  %dd= @message.published

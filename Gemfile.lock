@@ -40,6 +40,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faker (0.3.1)
     haml (3.0.17)
     hpricot (0.8.2)
     i18n (0.4.1)
@@ -102,7 +103,8 @@ PLATFORMS
 DEPENDENCIES
   autotest
   devise (= 1.1.1)
-  haml
+  faker
+  haml (= 3.0.17)
   hpricot
   pg
   rails (= 3.0.0.rc2)

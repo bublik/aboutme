@@ -7,13 +7,11 @@ gem 'rails', '3.0.0.rc2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'haml'
+gem 'haml', '3.0.17'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'will_paginate', '3.0.pre2'
 gem 'devise', '1.1.1'
-
-
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -21,6 +19,7 @@ gem 'devise', '1.1.1'
  group :development, :test, :spec do
    gem "ruby-debug"
    gem "autotest"
+   gem 'faker'
    gem "rspec"
    gem "rspec-rails",      ">= 2.0.0.beta.19"
  end

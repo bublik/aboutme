@@ -1,2 +1,14 @@
 ru:
   hello: "Привет Свет"
+  actions: 'Возможности'
+  show: 'Посм.'
+  edit: 'Изм.'
+  destroy: 'Удал.'
+  back: 'назад'
+  are_you_sure: 'Вы уверены в своих действиях?'
+  messages:
+    index:
+      title: 'Список записей'
+      new_message: 'Новая записка'
+    new:
+      title: 'Новая запись'

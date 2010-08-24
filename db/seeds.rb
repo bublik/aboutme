@@ -5,4 +5,13 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-User.create! :full_name => 'First User', :email => 'user@test.com', :password => 'please', :password_confirmation => 'please'
+25.times do |num|
+ user = User.create(
+    :full_name => Faker::Name.name + "#{num}",
+    :email => Faker::Internet.email,
+    :password => "please#{num}",
+    :password_confirmation => "please#{num}"
+  )
+
+  Message.create!(:title =>	Faker::Lorem.sentence(5) , :content =>	Faker::Lorem.paragraph, :user => user)
+end

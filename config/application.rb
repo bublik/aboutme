@@ -34,12 +34,12 @@ module Aboutme
     config.encoding = "utf-8"
     
     # JavaScript files you want as :defaults (application.js is always included).
-    #config.action_view.javascript_expansions[:defaults] = %w()
+    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.1.min rails jquery-ui-1.8.4.custom.min)
 
     config.generators do |g|
       g.orm              :active_record
       g.template_engine  :haml
-      g.test_framework   :rspec, :fixture => true, :integration_tool => false, :routes => true, :views => true
+      g.test_framework   :rspec, :fixture => true, :integration_tool => false, :routes => true, :views => false
       g.integration_tool :rspec
     end
 
