@@ -1,0 +1,15 @@
+!!! 1.1
+%html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
+    = csrf_meta_tag
+    %title
+    = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'uniform', 'redmond/jquery-ui-1.8.4.custom'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie'
+    = javascript_include_tag :defaults
+  %body
+    #container
+      = render_flash_messages
+      = yield
+    #footer

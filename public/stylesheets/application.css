@@ -1,0 +1,28 @@
+/* 
+    Document   : aboutme
+    Created on : Aug 24, 2010, 6:03:06 PM
+    Author     : wr
+*/
+
+/* A container should group all your columns. */
+.container {
+  width: 950px;
+  margin: 0 auto;
+}
+
+/* Border on right hand side of a column. */
+.border {
+  padding-right: 4px;
+  margin-right: 5px;
+  border-right: 1px solid #eee;
+}
+
+/* Use a .box to create a padded box inside a column.  */
+.box {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  background: #E5ECF9;
+}
+
+.container {display: block;}
+.clear { clear:both; }
