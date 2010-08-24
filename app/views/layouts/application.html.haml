@@ -9,7 +9,9 @@
       = stylesheet_link_tag 'ie'
     = javascript_include_tag :defaults
   %body
-    #container
+    #header
+      = render :partial => 'layouts/header'
+    #container.container
       = render_flash_messages
       = yield
     #footer

@@ -34,13 +34,14 @@ GEM
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
     columnize (0.3.1)
-    devise (1.1.0)
+    devise (1.1.1)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.17)
+    hpricot (0.8.2)
     i18n (0.4.1)
     linecache (0.43)
     mail (2.2.5)
@@ -84,24 +85,29 @@ GEM
       ruby-debug-base (~> 0.10.3.0)
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
+    ruby_parser (2.0.4)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.0.4)
     thor (0.14.0)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
-    will_paginate (3.0.pre)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   autotest
-  devise (= 1.1)
+  devise (= 1.1.1)
   haml
+  hpricot
   pg
   rails (= 3.0.0.rc2)
   rspec
   rspec-rails (>= 2.0.0.beta.19)
   ruby-debug
-  will_paginate (= 3.0.pre)
+  ruby_parser
+  will_paginate (= 3.0.pre2)

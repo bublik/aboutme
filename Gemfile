@@ -8,8 +8,12 @@ gem 'rails', '3.0.0.rc2'
 
 gem 'pg'
 gem 'haml'
-gem 'will_paginate', '3.0.pre'
-gem 'devise', '1.1'
+gem 'hpricot'
+gem 'ruby_parser'
+gem 'will_paginate', '3.0.pre2'
+gem 'devise', '1.1.1'
+
+
 
 # Deploy with Capistrano
 # gem 'capistrano'
