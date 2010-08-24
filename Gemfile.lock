@@ -50,6 +50,7 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    nokogiri (1.4.3.1)
     pg (0.9.0)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -95,6 +96,10 @@ GEM
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
+    webrat (0.7.1)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -112,4 +117,5 @@ DEPENDENCIES
   rspec-rails (>= 2.0.0.beta.19)
   ruby-debug
   ruby_parser
+  webrat
   will_paginate (= 3.0.pre2)

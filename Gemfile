@@ -17,9 +17,10 @@ gem 'devise', '1.1.1'
 # gem 'capistrano'
 
  group :development, :test, :spec do
-   gem "ruby-debug"
-   gem "autotest"
+   gem 'ruby-debug'
+   gem 'autotest'
    gem 'faker'
-   gem "rspec"
-   gem "rspec-rails",      ">= 2.0.0.beta.19"
+   gem 'rspec'
+   gem 'webrat'
+   gem 'rspec-rails',      ">= 2.0.0.beta.19"
  end
