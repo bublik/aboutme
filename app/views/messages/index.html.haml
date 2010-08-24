@@ -6,17 +6,20 @@
     %tr
       %th= Message.human_attribute_name :title
       %th= Message.human_attribute_name :content
+      %th= Message.human_attribute_name :user_id
       %th= Message.human_attribute_name :published
-      %th{:colspan => 3}= t 'actions'
+      - if user_signed_in?
+        %th{:colspan => 2}= t 'actions'
   
   %tbody
     - for message in @messages
       %tr{ :class => cycle(:odd, :even) }
-        %td= message.title
+        %td= link_to(message.title, message)
         %td= message.content
+        %td= message.user.full_name
         %td= message.published
-        %td.action= link_to t('show'), message
-        %td.action= link_to t('edit'), edit_message_path(message)
-        %td.action= link_to t('destroy'), message, :confirm => t('are_you_sure'), :method => :delete
+        - if user_signed_in?
+          %td.action= link_to t('edit'), edit_message_path(message)
+          %td.action= link_to t('destroy'), message, :confirm => t('are_you_sure'), :method => :delete
 
 = will_paginate(@messages)

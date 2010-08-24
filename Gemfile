@@ -19,7 +19,7 @@ gem 'devise', '1.1.1'
  group :development, :test, :spec do
    gem 'ruby-debug'
    gem 'autotest'
-   gem 'faker'
+   gem 'faker' #http://faker.rubyforge.org/rdoc/
    gem 'rspec'
    gem 'webrat'
    gem 'rspec-rails',      ">= 2.0.0.beta.19"

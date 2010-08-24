@@ -2,7 +2,11 @@ Aboutme::Application.routes.draw do
   
   resources :messages
 
-  devise_for :users, :path_names => { :sign_up => "register" }
+  devise_for :users, :path_names => { 
+    :sign_in => 'login', :sign_out => 'logout',
+    :password => 'secret'
+  }
+  
   root :to => 'messages#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
