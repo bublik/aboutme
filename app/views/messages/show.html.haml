@@ -1,12 +1,13 @@
-%h1= t '.title'
+%h1= @message.title
+- if user_signed_in?
+  .manage
+    = link_to t('back'), messages_path
+    = link_to t('edit'), edit_message_path(@message)
 %p
-  = link_to t('back'), messages_path
-  = link_to t('edit'), edit_message_path(@message)
-
-%dl
-  %dt= Message.human_attribute_name :title
-  %dd= @message.title
-  %dt= Message.human_attribute_name :content
-  %dd= @message.content
-  %dt= Message.human_attribute_name :published
-  %dd= @message.published
+  = @message.content
+  .small
+    %em= @message.created_at.to_s(:short)
+    %strong= @message.user.full_name
+- if user_signed_in?
+  = Message.human_attribute_name :published
+  = @message.published ? 'yes' : 'no'
