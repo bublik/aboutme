@@ -1,3 +1,22 @@
 == Welcome
 
+Builded on
+  * JQuery 1.4.1 (recomended for rails 3)
+  * JQuery UI (customized)
+  * Blueprint (CSS Framework)
+  * HAML
+  * devise (simple authentification for rails app)
+
+
+  
 == Getting Started
+git clone git://github.com/bublik/aboutme.git
+bundle install
+
+cp ./config/database.yml.example  ./config/database.yml
+vi ./config/database.yml
+
+rake db:create
+rake db:migrate
+rake db:seed #need in development mode
+
