@@ -4,12 +4,15 @@
     Author     : wr
 */
 
-/* A container should group all your columns. */
+#header {padding-bottom: 10px;}
+#footer {padding-top: 10px;}
 .container {
+  display: block;
   width: 950px;
   margin: 0 auto;
 }
-
+h1,h2,h3,h4,h5{color:#ff925c}
+a {color: #5c9ccc}
 /* Border on right hand side of a column. */
 .border {
   padding-right: 4px;
@@ -24,5 +27,4 @@
   background: #E5ECF9;
 }
 
-.container {display: block;}
 .clear { clear:both; }

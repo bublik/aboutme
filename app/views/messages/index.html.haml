@@ -2,7 +2,7 @@
 %p= link_to t('.new_message'), new_message_path
 
 - @messages.each do |message|
-  %div{ :class => cycle(:odd, :even) }
+  %div
     %h2= link_to(message.title, message)
     = message.content
     .small

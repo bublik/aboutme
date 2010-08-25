@@ -3,15 +3,15 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
     = csrf_meta_tag
-    %title
+    %title= yield(:title)
     = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie'
     = javascript_include_tag :defaults
   %body
-    #header
-      = render :partial => 'layouts/header'
     #container.container
-      = render_flash_messages
+      #header.top
+        = render :partial => 'layouts/header'
+        = render_flash_messages
       = yield
-    #footer
+      #footer.bottom.small=  'Разработанов свободное от работы время'
