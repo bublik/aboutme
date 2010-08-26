@@ -6,10 +6,10 @@
     %h2= link_to(message.title, message)
     = message.content
     .small
-      %em= message.created_at.to_s(:short)
+      %em.time= message.created_at.to_s(:short)
       %strong= message.user.full_name
       - if user_signed_in?
-        .manage
+        .actions
           = link_to t('edit'), edit_message_path(message)
           = link_to t('destroy'), message, :confirm => t('are_you_sure'), :method => :delete
 

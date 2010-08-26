@@ -1,5 +1,6 @@
-%h1= t '.title'
-%p
+- title(t('.title'))
+
+.actions
   = link_to t('back'), messages_path
   = link_to t('show'), @message
 = render 'form'
