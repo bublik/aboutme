@@ -22,7 +22,7 @@ input[type=text], input[type=password],
 input.text, input.title,
 textarea, select {
   background-color:#fff;
-  border:1px solid #bbb;
+  border:1px solid #ddd;
 }
 input[type=text]:focus, input[type=password]:focus,
 input.text:focus, input.title:focus,
@@ -33,6 +33,8 @@ textarea:focus, select:focus {
 input[type=text], input[type=password],
 input.text, input.title,
 textarea, select {
+  font-size:19px;
+  height:1.5em;
   margin:0.5em 0;
 }
 
