@@ -1,5 +1,2 @@
-= link_to 'home', root_path
-- if user_signed_in?
-  = link_to('Logout', destroy_user_session_path)
-- else
-  = link_to('Login', new_user_session_path)
+= link_to 'Главная', root_path
+= user_signed_in? ? link_to('Войти', destroy_user_session_path) : link_to('Выйти', new_user_session_path)

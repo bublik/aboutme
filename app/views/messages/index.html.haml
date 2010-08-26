@@ -6,7 +6,9 @@
     %h2= link_to(message.title, message)
     = message.content
     .small
-      %em.time= message.created_at.to_s(:short)
+      .ui-icon.ui-icon-calendar{:style => "float: left; margin-right: 0.3em;"}
+      %em= message.created_at.to_s(:short)
+      \/
       %strong= message.user.full_name
       - if user_signed_in?
         .actions
