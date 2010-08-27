@@ -3,10 +3,11 @@
 - @messages.each do |message|
   %div
     %h2= link_to(message.title, message)
-    = message.content
-    .small
+    =raw message.content
+    .clear
+    .small.paggind
       .ui-icon.ui-icon-calendar{:style => "float: left; margin-right: 0.3em;"}
-      %em= message.created_at.to_s(:short)
+      %em= l(@message.created_at, :format => 'short')
       \/
       %strong= message.user.full_name
       - if user_signed_in?

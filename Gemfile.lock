@@ -33,6 +33,7 @@ GEM
     autotest (4.3.2)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
+    ckeditor (3.4.0.pre)
     columnize (0.3.1)
     devise (1.1.1)
       bcrypt-ruby (~> 2.1.2)
@@ -51,6 +52,9 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     nokogiri (1.4.3.1)
+    paperclip (2.3.3)
+      activerecord
+      activesupport
     pg (0.9.0)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -89,6 +93,7 @@ GEM
       linecache (>= 0.3)
     ruby_parser (2.0.4)
       sexp_processor (~> 3.0)
+    russian (0.2.7)
     sexp_processor (3.0.4)
     thor (0.14.0)
     treetop (1.4.8)
@@ -107,15 +112,18 @@ PLATFORMS
 
 DEPENDENCIES
   autotest
+  ckeditor (= 3.4.0.pre)
   devise (= 1.1.1)
   faker
-  haml (= 3.0.17)
+  haml
   hpricot
+  paperclip
   pg
   rails (= 3.0.0.rc2)
   rspec
-  rspec-rails (>= 2.0.0.beta.19)
+  rspec-rails (>= 2.0.0.beta.20)
   ruby-debug
   ruby_parser
+  russian
   webrat
   will_paginate (= 3.0.pre2)

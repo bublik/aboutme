@@ -6,9 +6,8 @@ Builded on
   * Blueprint (CSS Framework)
   * HAML
   * devise (simple authentification for rails app)
+  * CKeditor
 
-
-  
 == Getting Started
 git clone git://github.com/bublik/aboutme.git
 bundle install
@@ -20,3 +19,5 @@ rake db:create
 rake db:migrate
 rake db:seed #need in development mode
 
+== Changelog
+27 Aug  - added ckeditor and paperclip for upload images and files to message

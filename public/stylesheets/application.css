@@ -5,6 +5,7 @@
 */
 
 #header {padding-bottom: 10px;}
+#flasher {margin-top: 5px}
 #footer {padding-top: 10px;}
 .container {
   display: block;
@@ -26,5 +27,11 @@ a {color: #5c9ccc}
   margin-bottom: 1.5em;
   background: #E5ECF9;
 }
+.paggind{ padding: 5px;}
+.clear { clear: both}
 
-.clear { clear:both; }
+ input.cke_dialog_ui_input_text{
+  font-size:10px;
+  height: 0.8em;
+  margin:0.5em 0;
+}

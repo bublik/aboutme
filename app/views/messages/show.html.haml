@@ -1,12 +1,14 @@
+- title(@message.title)
 %h1= @message.title
 - if user_signed_in?
-  .actions
-    = link_to t('back'), messages_path
-    = link_to t('edit'), edit_message_path(@message)
-    .status= @message.published ? 'public' : 'private'
-%p
-  = @message.content
-  .small
-    %em.time= @message.created_at.to_s(:short)
-    %strong= @message.user.full_name
 
+%p
+  =raw @message.content
+  .clear
+  .small.padding
+    %em.time= l(@message.created_at, :format => 'short')
+    \/
+    %strong= @message.user.full_name
+  .actions
+    = link_to t('edit'), edit_message_path(@message)
+    = @message.published ? '' : 'черновик'

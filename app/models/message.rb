@@ -6,7 +6,7 @@ class Message < ActiveRecord::Base
   scope :published, where(:published => true).order(:created_at)
   scope :drafts, where(:published => false).order(:created_at)
   
-  self.per_page = 5
+  @per_page = 5
 
   def to_param
     "#{self.id}-#{self.title.gsub(/[\W]/,'_')}"

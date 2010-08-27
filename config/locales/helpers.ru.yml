@@ -16,17 +16,11 @@ ru:
       message:
         title: 'Тема'
         content: 'Содержание'
-        published: 'Публичный'
+        published: 'Опубликовать'
       user:
         email: 'Мыло'
         full_name: 'ФИО'
         password: 'Пароль'
         password_confirmation: 'Повторите пароль'
         current_password: 'Текущий пароль'
-
-
-
-
-
-
 
