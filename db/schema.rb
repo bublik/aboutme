@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20100824192645) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.boolean  "published"
+    t.boolean  "published",  :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

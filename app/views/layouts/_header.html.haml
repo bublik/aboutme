@@ -1,2 +1,8 @@
-= link_to 'Главная', root_path
-= user_signed_in? ? link_to('Войти', destroy_user_session_path) : link_to('Выйти', new_user_session_path)
+= link_to(t('.home'), root_path)
+- if user_signed_in?
+  = link_to(t('.new_message'), new_message_path)
+  = link_to(t('.drafts'), draft_messages_path)
+  = link_to(t('.profile'), edit_user_registration_path)
+  = link_to(t('.logout'), destroy_user_session_path)
+- else
+  = link_to(t('.login'), new_user_session_path)

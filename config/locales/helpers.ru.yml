@@ -1,0 +1,32 @@
+ru:
+  attributes:
+    created_at: "Created at"
+    updated_at: "Updated at"
+  helpers:
+    submit:
+      create: "Добавить {{model}}"
+      update: "Обновить изменения для {{model}}"
+      post:
+        create: "Добавить {{model}}"
+  activerecord:
+    models:
+      message: 'Сообщение'
+      user: 'Пользователь'
+    attributes:
+      message:
+        title: 'Тема'
+        content: 'Содержание'
+        published: 'Публичный'
+      user:
+        email: 'Мыло'
+        full_name: 'ФИО'
+        password: 'Пароль'
+        password_confirmation: 'Повторите пароль'
+        current_password: 'Текущий пароль'
+
+
+
+
+
+
+
