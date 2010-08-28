@@ -3,9 +3,12 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :content
-  scope :published, where(:published => true).order(:created_at)
-  scope :drafts, where(:published => false).order(:created_at)
-  
+  scope :published, where(:published => true).order('created_at DESC')
+  scope :drafts, where(:published => false).order('created_at DESC')
+
+  acts_as_taggable
+  scope :by_join_date, order('created_at DESC')
+
   @per_page = 5
 
   def to_param

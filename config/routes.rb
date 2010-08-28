@@ -1,5 +1,7 @@
 Aboutme::Application.routes.draw do
-  
+
+
+  match '/messages/tag/:tag' => "messages#tag", :as => :msg_tag
   resources :messages do
     collection do
       get :draft

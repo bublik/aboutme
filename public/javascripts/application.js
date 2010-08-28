@@ -2,10 +2,9 @@ $(document).ready( function(){
   $("button, input:submit, #header a, .pagination a, .pagination span").button();
   $(".pagination em").button().addClass('ui-state-active');
   $("#header").buttonset().css('margin-top', '-4px');
-  
-//  $(".notice").buttonset({
+//  $(".tags a").buttonset({
 //    icons: {
-//      primary: 'ui-icon-notice'
-//    }
+//      primary: 'ui-icon-tag'
+//   }
 //  });
 });

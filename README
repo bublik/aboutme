@@ -20,4 +20,5 @@ rake db:migrate
 rake db:seed #need in development mode
 
 == Changelog
-27 Aug  - added ckeditor and paperclip for upload images and files to message
+27 Aug - added ckeditor and paperclip for upload images and files to message
+28 Aug - added ActsAsTaggableOn  tagging for messages

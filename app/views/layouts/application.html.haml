@@ -1,15 +1,12 @@
 !!! 1.1
-%html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml" }
+%html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type"}
+    %title= yield(:title) ? yield(:title) : APP_CONFIG['site_name']
+    %meta{:name => "keywords", :lang => "ru", :content => yield(:keywords) +' '+ APP_CONFIG['keywords']}
+    %meta{:name => "description", :lang => "ru", :content => yield(:description) +' '+ APP_CONFIG['description']}
+    %link{:rel => "shortcut icon", :href => "/images/favicon.ico"}
     = csrf_meta_tag
-    %title= yield(:title) || APP_CONFIG['title']
-    %description= yield(:description) || APP_CONFIG['description']
-    %keywords= yield(:keywords) || APP_CONFIG['keywords']
-
-    = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
-    /[if lt IE 8]
-      = stylesheet_link_tag 'ie'
     = javascript_include_tag :defaults
   %body
     #container.container
@@ -18,4 +15,7 @@
         = render_flash_messages
       = yield
       .clear
-      #footer.bottom.small=  'Разработанов свободное от работы время'
+      #footer.bottom.small=  'Разработано в свободное от работы время &copy; 2010'.html_safe
+    = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie'

@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include ActsAsTaggableOn::TagsHelper
 
   ## Output flash messages
   def render_flash_messages
@@ -9,9 +10,11 @@ module ApplicationHelper
     end unless flash.blank?
   end
 
+  def message_tags(tag_list)
+    tag_list.collect{ |tag| link_to(tag, msg_tag_path(tag), :class => '')}.join(' ').html_safe
+  end
 
-
-# helper methods
+  # helper methods
   def title(page_title)
     content_for(:title) { page_title }
   end

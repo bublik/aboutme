@@ -1,14 +1,18 @@
 - title(@message.title)
-%h1= @message.title
-- if user_signed_in?
+%h1= yield(:title)
 
 %p
   =raw @message.content
   .clear
+  -unless @message.tag_list.blank?
+    .tags
+      %span.ui-icon.ui-icon-tag{:style => "float: left; margin-right: 0.3em;"}
+      = message_tags(@message.tag_list)
   .small.padding
     %em.time= l(@message.created_at, :format => 'short')
     \/
     %strong= @message.user.full_name
-  .actions
-    = link_to t('edit'), edit_message_path(@message)
-    = @message.published ? '' : 'черновик'
+  - if user_signed_in?
+    .actions
+      = link_to t('edit'), edit_message_path(@message)
+      = 'черновик' unless @message.published

@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.0.rc2)
       activesupport (= 3.0.0.rc2)
     activesupport (3.0.0.rc2)
+    acts-as-taggable-on (2.0.6)
     arel (1.0.0.rc1)
       activesupport (>= 3.0.0.beta)
     autotest (4.3.2)
@@ -111,6 +112,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   autotest
   ckeditor (= 3.4.0.pre)
   devise (= 1.1.1)

@@ -17,6 +17,7 @@ ru:
         title: 'Тема'
         content: 'Содержание'
         published: 'Опубликовать'
+        tags: 'Метки'
       user:
         email: 'Мыло'
         full_name: 'ФИО'
