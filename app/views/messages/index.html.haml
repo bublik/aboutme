@@ -1,15 +1,17 @@
 %h1= t('.title')
-%p= link_to t('.new_message'), new_message_path
 
 - @messages.each do |message|
   %div
     %h2= link_to(message.title, message)
-    = message.content
-    .small
-      %em= message.created_at.to_s(:short)
+    =raw message.content
+    .clear
+    .small.paggind
+      .ui-icon.ui-icon-calendar{:style => "float: left; margin-right: 0.3em;"}
+      %em= l(@message.created_at, :format => 'short')
+      \/
       %strong= message.user.full_name
       - if user_signed_in?
-        .manage
+        .actions
           = link_to t('edit'), edit_message_path(message)
           = link_to t('destroy'), message, :confirm => t('are_you_sure'), :method => :delete
 

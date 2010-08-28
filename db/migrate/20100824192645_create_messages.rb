@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.integer :user_id
       t.string :title
       t.text :content
-      t.boolean :published
+      t.boolean :published, :default => true
 
       t.timestamps
     end

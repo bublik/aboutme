@@ -6,9 +6,20 @@ ru:
   destroy: 'Удал.'
   back: 'назад'
   are_you_sure: 'Вы уверены в своих действиях?'
+  layouts:
+    header:
+      new_message: 'Доб. запись'
+      home: 'Главная'
+      login: 'Войти'
+      logout: 'Выйти'
+      profile: 'Профайл'
+      drafts: 'Черновики'
   messages:
     index:
       title: 'Список записей'
       new_message: 'Новая записка'
     new:
       title: 'Новая запись'
+    edit:
+      title: 'Редактирование'
+

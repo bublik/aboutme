@@ -2,10 +2,19 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
   def index
-    @messages = Message.paginate(:page => params[:page])
+    @messages = Message.published.includes(:user).paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xml  { render :xml => @messages }
+    end
+  end
+
+  def draft
+     @messages = Message.drafts.paginate(:page => params[:page])
+
+    respond_to do |format|
+      format.html {render :action => 'index'}
       format.xml  { render :xml => @messages }
     end
   end
@@ -41,7 +50,8 @@ class MessagesController < ApplicationController
   # POST /messages.xml
   def create
     @message = Message.new(params[:message])
-
+    @message.user = current_user
+    
     respond_to do |format|
       if @message.save
         ping(@message) if APP_CONFIG['ping_enabled']

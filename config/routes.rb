@@ -1,6 +1,10 @@
 Aboutme::Application.routes.draw do
   
-  resources :messages
+  resources :messages do
+    collection do
+      get :draft
+    end
+  end
 
   devise_for :users, :path_names => { 
     :sign_in => 'login', :sign_out => 'logout',

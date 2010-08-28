@@ -3,9 +3,10 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :content
-  scope :published, where(:published => true)
+  scope :published, where(:published => true).order(:created_at)
+  scope :drafts, where(:published => false).order(:created_at)
   
-  @per_page  = 10
+  @per_page = 5
 
   def to_param
     "#{self.id}-#{self.title.gsub(/[\W]/,'_')}"

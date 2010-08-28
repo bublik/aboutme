@@ -7,12 +7,14 @@ gem 'rails', '3.0.0.rc2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'haml', '3.0.17'
+gem 'haml'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'will_paginate', '3.0.pre2'
 gem 'devise', '1.1.1'
-
+gem 'ckeditor', '3.4.0.pre'
+gem 'paperclip'
+gem 'russian'
 # Deploy with Capistrano
 # gem 'capistrano'
 
@@ -22,5 +24,5 @@ gem 'devise', '1.1.1'
    gem 'faker' #http://faker.rubyforge.org/rdoc/
    gem 'rspec'
    gem 'webrat'
-   gem 'rspec-rails',      ">= 2.0.0.beta.19"
+   gem 'rspec-rails',      ">= 2.0.0.beta.20"
  end

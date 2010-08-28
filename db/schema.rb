@@ -10,13 +10,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824192645) do
+ActiveRecord::Schema.define(:version => 20100827173619) do
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                                 :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 25
+    t.string   "guid",              :limit => 10
+    t.integer  "locale",            :limit => 2,  :default => 0
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
+  add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
 
   create_table "messages", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.boolean  "published"
+    t.boolean  "published",  :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
