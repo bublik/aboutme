@@ -13,5 +13,10 @@
     :password_confirmation => "please#{num}"
   )
 
-  Message.create!(:title =>	Faker::Lorem.sentence(5) , :content =>	Faker::Lorem.paragraph, :user => user)
+Message.create!(
+  :title => Faker::Lorem.sentence(5), 
+  :content => Faker::Lorem.paragraph, 
+  :user => user,
+  :published => [0,1].shuffle.first
+)
 end

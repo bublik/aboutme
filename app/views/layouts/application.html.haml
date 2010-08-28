@@ -3,7 +3,10 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
     = csrf_meta_tag
-    %title= yield(:title)
+    %title= yield(:title) || APP_CONFIG['title']
+    %description= yield(:description) || APP_CONFIG['description']
+    %keywords= yield(:keywords) || APP_CONFIG['keywords']
+
     = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie'

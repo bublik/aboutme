@@ -44,6 +44,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        ping(@message) if APP_CONFIG['ping_enabled']
         format.html { redirect_to(@message, :notice => 'Message was successfully created.') }
         format.xml  { render :xml => @message, :status => :created, :location => @message }
       else
@@ -79,5 +80,14 @@ class MessagesController < ApplicationController
       format.html { redirect_to(messages_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+  def ping(message)
+    Pinging.new(
+      APP_CONFIG['site_name'], url_for( :host => request.host),
+      url_for(:host => request.host, :controller => 'messages', :action => 'show', :id => message.id),
+      APP_CONFIG['keywords'].gsub(',', '|')
+    ).ping_all
   end
 end
