@@ -15,10 +15,13 @@ bundle install
 cp ./config/database.yml.example  ./config/database.yml
 vi ./config/database.yml
 
+cp ./config/config.yml.example  ./config/config.yml
+vi ./config/config.yml
+
 rake db:create
 rake db:migrate
 rake db:seed #need in development mode
 
 == Changelog
-27 Aug - added ckeditor and paperclip for upload images and files to message
 28 Aug - added ActsAsTaggableOn  tagging for messages
+27 Aug - added ckeditor and paperclip for upload images and files to message

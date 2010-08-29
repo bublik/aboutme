@@ -1,6 +1,10 @@
 class MessagesController < ApplicationController
   respond_to :html, :xml
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
+  before_filter :find_message, :only => [:show, :edit]
+  before_filter :find_own_message, :only => [:destroy, :update]
+
   # GET /messages
   # GET /messages.xml
   def index
@@ -18,7 +22,6 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.xml
   def show
-    @message = Message.find(params[:id])
     respond_with(@message)
   end
 
@@ -31,7 +34,6 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
-    @message = Message.find(params[:id])
   end
 
   # POST /messages
@@ -52,11 +54,10 @@ class MessagesController < ApplicationController
   # PUT /messages/1
   # PUT /messages/1.xml
   def update
-    @message = Message.find(params[:id])
     @message.tag_list = params[:tags]
 
     if @message.update_attributes(params[:message])
-      respond_with(@message, :notice => 'Message was successfully updated.')
+      respond_with(@message) #, :notice => 'Message was successfully updated.'
     else
       respond_with(@message)
     end
@@ -66,9 +67,8 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.xml
   def destroy
-    @message = Message.find(params[:id])
-    @message.destroy
 
+    @message.destroy
     respond_with(@message)
   end
 
@@ -80,6 +80,15 @@ class MessagesController < ApplicationController
   end
 
   private
+  
+  def find_message
+    @message = Message.find(params[:id])
+  end
+
+  def find_own_message
+    @message = current_user.messages.find(params[:id])
+  end
+
   def ping(message)
     Pinging.new(
       APP_CONFIG['site_name'], url_for( :host => request.host),

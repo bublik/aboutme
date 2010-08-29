@@ -6,10 +6,23 @@ describe MessagesController do
     @mock_message ||= mock_model(Message, stubs).as_null_object
   end
 
+  def mock_user(stubs={})
+    @mock_user ||= mock_model(User, stubs).as_null_object
+  end
+
+  before(:each) do
+    mock_user.stub(:messages){mock_message}
+    Message.stub(:find).and_return(mock_message)
+    @controller.stub(:authenticate_user!){true}
+    @controller.stub(:current_user){mock_user}
+  end
+
   describe "GET index" do
     it "assigns all messages as @messages" do
-      Message.stub(:all) { [mock_message] }
+      mock_message.should_receive(:includes).and_return([mock_message])
+      Message.stub(:published).and_return(mock_message)
       get :index
+      response.should render_template(:index)
       assigns(:messages).should eq([mock_message])
     end
   end
@@ -62,8 +75,11 @@ describe MessagesController do
       end
 
       it "re-renders the 'new' template" do
-        Message.stub(:new) { mock_message(:save => false) }
+        mock_message.should_receive(:save){ false }
+        mock_message.errors[:title] = 'blank title'
+        Message.stub(:new) { mock_message(:save => false, :errors => [:title, 'blank']) }
         post :create, :message => {}
+
         response.should render_template("new")
       end
     end
@@ -74,7 +90,7 @@ describe MessagesController do
 
     describe "with valid params" do
       it "updates the requested message" do
-        Message.should_receive(:find).with("37") { mock_message }
+        mock_message.should_receive(:find).with("37") { mock_message }
         mock_message.should_receive(:update_attributes).with({'these' => 'params'})
         put :update, :id => "37", :message => {'these' => 'params'}
       end
@@ -100,7 +116,8 @@ describe MessagesController do
       end
 
       it "re-renders the 'edit' template" do
-        Message.stub(:find) { mock_message(:update_attributes => false) }
+        mock_message.errors[:title] = 'title cant be blank'
+        mock_message.stub(:find) { mock_message(:update_attributes => false) }
         put :update, :id => "1"
         response.should render_template("edit")
       end
@@ -110,7 +127,7 @@ describe MessagesController do
 
   describe "DELETE destroy" do
     it "destroys the requested message" do
-      Message.should_receive(:find).with("37") { mock_message }
+      mock_message.should_receive(:find).with("37") { mock_message }
       mock_message.should_receive(:destroy)
       delete :destroy, :id => "37"
     end
@@ -118,7 +135,7 @@ describe MessagesController do
     it "redirects to the messages list" do
       Message.stub(:find) { mock_message }
       delete :destroy, :id => "1"
-      response.should redirect_to(messages_url)
+      response.should redirect_to(mock_message)
     end
   end
 
