@@ -19,6 +19,10 @@ describe MessagesController do
       { :get => "/messages/1/edit" }.should route_to(:controller => "messages", :action => "edit", :id => "1")
     end
 
+    it "recognizes and generates #tag" do
+      { :get => "/messages/tag/tag_name" }.should route_to(:controller => "messages", :action => "tag", :tag => "tag_name")
+    end
+
     it "recognizes and generates #create" do
       { :post => "/messages" }.should route_to(:controller => "messages", :action => "create")
     end

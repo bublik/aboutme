@@ -66,7 +66,7 @@ class MessagesController < ApplicationController
   end
 
   def tag
-    @messages = Message.tagged_with(params[:tag]).published.paginate(:page => params[:page], :per_page => 10)
+    @messages = Message.published.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
     respond_with(@messages) do |format|
       format.html {render :action => 'index'}
     end

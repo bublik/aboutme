@@ -25,5 +25,5 @@ gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
    gem 'faker' #http://faker.rubyforge.org/rdoc/
    gem 'rspec'
    gem 'webrat'
-   gem 'rspec-rails',      ">= 2.0.0.beta.20"
+   gem 'rspec-rails', ">= 2.0.0.beta.20"
  end

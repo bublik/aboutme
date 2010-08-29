@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Message do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should render cool to_param string' do
+    mesg = Message.new(:title => 'my title', :content => 'message body')
+    mesg.save
+    mesg.to_param.should match(/\d-\w/)
+  end
 end

@@ -27,6 +27,17 @@ describe MessagesController do
     end
   end
 
+  describe "GET tags" do
+    it "assigns all messages as @messages" do
+      #mock_message.should_receive(:includes).and_return([mock_message])
+      Message.stub(:tagged_with).and_return([mock_message])
+      get :tag, :tag => 'tag_name'
+      response.should render_template(:index)
+      assigns(:messages).should eq([mock_message])
+    end
+  end
+
+
   describe "GET show" do
     it "assigns the requested message as @message" do
       Message.stub(:find).with("37") { mock_message }
