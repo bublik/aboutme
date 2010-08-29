@@ -2,9 +2,17 @@ ru:
   flash:
     actions:
       create:
-        notice: "%{resource_name} успешно сохранено"
+        notice: "%{resource_name} успешно добавлено"
       update:
         notice: "%{resource_name} успешно изменено"
       destroy:
         notice: "%{resource_name} удалено"
         alert: "%{resource_name} не может быть удалено"
+    category:
+      create:
+        notice: "%{resource_name} успешно добавлена"
+      update:
+        notice: "%{resource_name} успешно изменена"
+      destroy:
+        notice: "%{resource_name} удалена"
+        alert: "%{resource_name} не может быть удалена"

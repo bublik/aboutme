@@ -12,12 +12,16 @@ ru:
     models:
       message: 'Сообщение'
       user: 'Пользователь'
+      category: 'Раздел'
     attributes:
+      category:
+        title: 'Название'
       message:
         title: 'Тема'
         content: 'Содержание'
         published: 'Опубликовать'
         tags: 'Метки'
+        categories: 'Разделы'
       user:
         email: 'Мыло'
         full_name: 'ФИО'

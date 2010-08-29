@@ -6,3 +6,4 @@ log/*.log
 tmp/**/*
 nbproject/*
 public/ckeditor_assets/*
+public/stylesheets/scaffold.css

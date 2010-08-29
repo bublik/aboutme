@@ -18,12 +18,25 @@
   width: 950px;
   margin: 0 auto
 }
-.container .page { min-height: 600px }
+.container .page { min-height: 600px; width: 78%; float: left;}
+.container .navigation { min-height: 600px; width: 20%; float: right }
+.category {padding: 4px; font-size: 1.1em; clear: both}
+.category a {text-decoration: none; }
+.category a:hover {color: #ff925c }
+.category .action {float: right; font-size: 0.6em}
 
 h1,h2,h3,h4,h5{ color:#ff925c }
+h1.ui-widget-header,
+h2.ui-widget-header,
+h3.ui-widget-header,
+h4.ui-widget-header,
+h5.ui-widget-header {
+  margin: 0;
+  padding: 5px
+}
 a {color: #5c9ccc}
 /* Border on right hand side of a column. */
-.border {
+.border-right {
   padding-right: 4px;
   margin-right: 5px;
   border-right: 1px solid #a6c9e2
@@ -37,7 +50,9 @@ a {color: #5c9ccc}
 }
 
 .clear { clear: both }
-
+.left { float: left }
+.right { float: right }
+.draft {background-image: url('/images/draft.jpeg')}
 input.cke_dialog_ui_input_text {
   font-size:10px;
   height: 0.8em;

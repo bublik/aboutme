@@ -1,15 +1,11 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the MessagesHelper. For example:
-#
-# describe MessagesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe MessagesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'should return tags list' do
+    message = Message.new(:title => 'message')
+    message.tag_list = 'tag1, tag2'
+    helper.message_tags(message).should have_selector('a', :href => '/messages/tag/tag1', :content => 'tag1')
+    helper.message_tags(message).should have_selector('a', :href => '/messages/tag/tag2', :content => 'tag2')
+  end
 end

@@ -20,6 +20,12 @@
     %br
     = text_field_tag :tags, params[:tags] || @message.tag_list, :size => 30
   .field
+    = f.label :categories
+    %br
+    - Category.all.each do |category|
+      = check_box_tag('message[category_ids][]', category.id, @message.categories.include?(category))
+      = category.title
+  .field
     = f.label :published
     %br
     = f.check_box :published

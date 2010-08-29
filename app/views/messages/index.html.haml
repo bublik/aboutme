@@ -5,20 +5,11 @@
   %div
     %h2= link_to(message.title, message)
     =raw message.content
-    .clear
-    -unless message.tag_list.blank?
-      .tags
-        %span.ui-icon.ui-icon-tag{:style => "float: left; margin-right: 0.3em;"}
-        = message_tags(message.tag_list)
-    .small
-      .ui-icon.ui-icon-calendar{:style => "float: left; margin-right: 0.3em;"}
-      %em= l(message.created_at, :format => 'short')
-      \/
-      %strong= message.user.full_name
-      - if user_signed_in?
-        .actions
-          .ui-icon.ui-icon-wrench{:style => "float: left; margin-right: 0.3em;"}
-          = link_to t('edit'), edit_message_path(message)
-          = link_to t('destroy'), message, :confirm => t('are_you_sure'), :method => :delete
+    .clear.small
+      = message_tags(message)
+      = message_created(message)
+      = message_actions(message) if user_signed_in?
 
 = will_paginate(@messages)
+- if @messages.empty?
+  %h4= t('.messages_not_found')

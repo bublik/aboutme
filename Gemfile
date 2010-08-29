@@ -12,7 +12,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 
 gem 'devise', '1.1.1'
-gem 'responders'
+gem 'responders' #dry flash
 gem 'russian'
 gem 'ckeditor', '3.4.0.pre'
 gem 'paperclip'
@@ -26,4 +26,5 @@ gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
    gem 'rspec'
    gem 'webrat'
    gem 'rspec-rails', ">= 2.0.0.beta.20"
+   gem "haml-rails" #generator
  end

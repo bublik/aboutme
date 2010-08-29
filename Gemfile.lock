@@ -44,6 +44,9 @@ GEM
       abstract (>= 1.0.0)
     faker (0.3.1)
     haml (3.0.17)
+    haml-rails (0.2)
+      haml (~> 3.0)
+      rails (~> 3.0.0.rc)
     hpricot (0.8.2)
     i18n (0.4.1)
     linecache (0.43)
@@ -119,6 +122,7 @@ DEPENDENCIES
   devise (= 1.1.1)
   faker
   haml
+  haml-rails
   hpricot
   paperclip
   pg

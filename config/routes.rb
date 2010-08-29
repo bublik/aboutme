@@ -1,7 +1,6 @@
 Aboutme::Application.routes.draw do
-
-
-  match '/messages/tag/:tag' => "messages#tag", :as => :msg_tag
+  
+  resources :categories
   resources :messages do
     collection do
       get :draft
@@ -9,12 +8,19 @@ Aboutme::Application.routes.draw do
     end
   end
 
+  resources :categories do
+    resources :messages
+  end
+
+  root :to => 'messages#index'
+  match '/messages/tag/:tag' => "messages#tag", :as => :msg_tag
+
   devise_for :users, :path_names => {
     :sign_in => 'login', :sign_out => 'logout',
     :password => 'secret'
   }
   
-  root :to => 'messages#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,18 +1,9 @@
 - title(@message.title)
 %h1= yield(:title)
 
-%p
+%div{:class => !@message.published && 'draft'}
   =raw @message.content
-  .clear
-  -unless @message.tag_list.blank?
-    .tags
-      %span.ui-icon.ui-icon-tag{:style => "float: left; margin-right: 0.3em;"}
-      = message_tags(@message.tag_list)
-  .small.padding
-    %em.time= l(@message.created_at, :format => 'short')
-    \/
-    %strong= @message.user.full_name
-  - if user_signed_in?
-    .actions
-      = link_to t('edit'), edit_message_path(@message)
-      = 'черновик' unless @message.published
+.clear.small
+  = message_tags(@message)
+  = message_created(@message)
+  = message_actions(@message) if user_signed_in?

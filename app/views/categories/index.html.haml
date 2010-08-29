@@ -1,0 +1,16 @@
+%h1 Список категорий
+
+%table
+  %tr
+    %th Название
+    %th
+    %th
+
+  - @categories.each do |category|
+    %tr
+      %td= category.title
+      
+
+%br
+
+= link_to t('.new_category'), new_category_path
