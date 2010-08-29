@@ -45,10 +45,8 @@ class MessagesController < ApplicationController
 
     if @message.save
       ping(@message) if APP_CONFIG['ping_enabled']
-      respond_with(@message, :notice => 'Message was successfully created.')
-    else
-      respond_with(@message)
     end
+    respond_with(@message, :flash => true)
   end
 
   # PUT /messages/1
@@ -56,20 +54,15 @@ class MessagesController < ApplicationController
   def update
     @message.tag_list = params[:tags]
 
-    if @message.update_attributes(params[:message])
-      respond_with(@message) #, :notice => 'Message was successfully updated.'
-    else
-      respond_with(@message)
-    end
-    
+    @message.update_attributes(params[:message])
+    respond_with(@message, :flash => true)
   end
 
   # DELETE /messages/1
   # DELETE /messages/1.xml
   def destroy
-
     @message.destroy
-    respond_with(@message)
+    respond_with(@message, :flash => true)
   end
 
   def tag
@@ -80,7 +73,6 @@ class MessagesController < ApplicationController
   end
 
   private
-  
   def find_message
     @message = Message.find(params[:id])
   end

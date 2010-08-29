@@ -12,6 +12,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 
 gem 'devise', '1.1.1'
+gem 'responders'
 gem 'russian'
 gem 'ckeditor', '3.4.0.pre'
 gem 'paperclip'

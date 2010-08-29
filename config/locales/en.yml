@@ -1,5 +1,25 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  hello: "Привет Свет"
+  actions: 'Возможности'
+  show: 'Посм.'
+  edit: 'Изм.'
+  destroy: 'Удал.'
+  back: 'назад'
+  are_you_sure: 'Вы уверены в своих действиях?'
+  error404: 'Такой страницы нет, возможно она перемещена ил иудалена.'
+  layouts:
+    header:
+      new_message: 'Доб. запись'
+      home: 'Главная'
+      login: 'Войти'
+      logout: 'Выйти'
+      profile: 'Профайл'
+      drafts: 'Черновики'
+  messages:
+    index:
+      title: 'Список записей'
+      new_message: 'Новая записка'
+    new:
+      title: 'Новая запись'
+    edit:
+      title: 'Редактирование'

@@ -4,10 +4,10 @@ ru:
     updated_at: "Updated at"
   helpers:
     submit:
-      create: "Добавить {{model}}"
-      update: "Обновить изменения для {{model}}"
+      create: "Добавить %{model}"
+      update: "Обновить изменения для %{model}"
       post:
-        create: "Добавить {{model}}"
+        create: "Добавить %{model}"
   activerecord:
     models:
       message: 'Сообщение'
@@ -24,4 +24,3 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Повторите пароль'
         current_password: 'Текущий пароль'
-

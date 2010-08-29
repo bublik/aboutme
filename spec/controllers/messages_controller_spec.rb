@@ -57,6 +57,7 @@ describe MessagesController do
       it "assigns a newly created message as @message" do
         Message.stub(:new).with({'these' => 'params'}) { mock_message(:save => true) }
         post :create, :message => {'these' => 'params'}
+        flash[:notice].should_not be_blank
         assigns(:message).should be(mock_message)
       end
 
@@ -71,6 +72,7 @@ describe MessagesController do
       it "assigns a newly created but unsaved message as @message" do
         Message.stub(:new).with({'these' => 'params'}) { mock_message(:save => false) }
         post :create, :message => {'these' => 'params'}
+        flash[:alert].should be_blank
         assigns(:message).should be(mock_message)
       end
 
@@ -135,7 +137,16 @@ describe MessagesController do
     it "redirects to the messages list" do
       Message.stub(:find) { mock_message }
       delete :destroy, :id => "1"
+      flash[:notice].should_not be_blank
       response.should redirect_to(mock_message)
+    end
+
+    it "should not be sestroyed and rendered flash message" do
+      mock_message.errors[:user] = 'cant be  destroyes'
+      mock_message.stub(:destroy){false}
+      mock_message.should_receive(:find).with("37") { mock_message }
+      delete :destroy, :id => "37"
+      flash[:alert].should_not be_blank
     end
   end
 

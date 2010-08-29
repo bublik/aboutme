@@ -1,0 +1,10 @@
+ru:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} успешно сохранено"
+      update:
+        notice: "%{resource_name} успешно изменено"
+      destroy:
+        notice: "%{resource_name} удалено"
+        alert: "%{resource_name} не может быть удалено"
