@@ -1,4 +1,5 @@
 = link_to(t('.home'), root_path)
+= link_to(t('.tag_cloud'), tag_cloud_messages_path)
 - if user_signed_in?
   = link_to(t('.new_message'), new_message_path)
   = link_to(t('.drafts'), draft_messages_path)

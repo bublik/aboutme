@@ -2,10 +2,10 @@
 %html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type"}
-    %title= yield(:title) ? yield(:title) : APP_CONFIG['site_name']
     %meta{:name => "keywords", :lang => "ru", :content => yield(:keywords) +' '+ APP_CONFIG['keywords']}
     %meta{:name => "description", :lang => "ru", :content => yield(:description) +' '+ APP_CONFIG['description']}
     %link{:rel => "shortcut icon", :href => "/images/favicon.ico"}
+    %title= yield(:title) ? yield(:title) : APP_CONFIG['site_name']
     = csrf_meta_tag
     = javascript_include_tag :defaults
   %body
@@ -13,9 +13,12 @@
       #header.top
         = render :partial => 'layouts/header'
         = render_flash_messages
-      = yield
+      .page= yield
       .clear
-      #footer.bottom.small=  'Разработано в свободное от работы время &copy; 2010'.html_safe
+      #footer.bottom.small
+        &copy; 2010
+        = " | ".html_safe + link_to('AboutMe', 'http://github.com/bublik/aboutme') + " | "
+        = link_to('RubyClub', 'http://rubyclub.com.ua')
     = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie'

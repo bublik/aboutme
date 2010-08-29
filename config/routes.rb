@@ -5,6 +5,7 @@ Aboutme::Application.routes.draw do
   resources :messages do
     collection do
       get :draft
+      get :tag_cloud
     end
   end
 

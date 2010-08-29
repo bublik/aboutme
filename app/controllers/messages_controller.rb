@@ -2,8 +2,8 @@ class MessagesController < ApplicationController
   respond_to :html, :xml
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
-  before_filter :find_message, :only => [:show, :edit]
-  before_filter :find_own_message, :only => [:destroy, :update]
+  before_filter :find_message, :only => [:show]
+  before_filter :find_own_message, :only => [:edit, :destroy, :update]
 
   # GET /messages
   # GET /messages.xml
@@ -72,6 +72,10 @@ class MessagesController < ApplicationController
     end
   end
 
+  def tag_cloud
+    @tags = Message.published.tag_counts_on(:tags)
+  end
+     
   private
   def find_message
     @message = Message.find(params[:id])
