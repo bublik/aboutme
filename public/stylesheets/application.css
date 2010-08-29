@@ -9,7 +9,7 @@
 #footer {
   padding-top: 10px;
   margin-top: 10px;
-  border-top: 1px solid #D1E3EF;
+  border-top: 1px dotted #D1E3EF;
   text-align: center;
   color: #7F7F7F
 }
@@ -45,7 +45,7 @@ input.cke_dialog_ui_input_text {
 }
 .ui-icon {display: inline-block !important}
 
-.tags {font-size: 110%}
+.tags a {font-size: 110%; text-decoration: none}
 .css1 { font-size: 1.0em }
 .css2 { font-size: 1.2em }
 .css3 { font-size: 1.4em }

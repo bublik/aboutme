@@ -18,7 +18,7 @@
   .field
     = f.label :tags
     %br
-    = text_field_tag :tags, params[:tags] || @message.tag_list
+    = text_field_tag :tags, params[:tags] || @message.tag_list, :size => 30
   .field
     = f.label :published
     %br
