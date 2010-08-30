@@ -1,20 +1,20 @@
 source 'http://rubygems.org'
 source :gemcutter
 
-gem 'rails', '3.0.0.rc2'
+gem 'rails', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'haml'
+gem 'haml', '3.0.18'
 gem 'hpricot'
 gem 'ruby_parser'
 
-gem 'devise', '1.1.1'
+gem 'devise', '1.1.2'
 gem 'responders' #dry flash
 gem 'russian'
-gem 'ckeditor', '3.4.0.pre'
+gem 'ckeditor', '3.4.0'
 gem 'paperclip'
 gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
