@@ -112,6 +112,7 @@ GEM
       rack (>= 1.0)
       rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
+    ya2yaml (0.30)
 
 PLATFORMS
   ruby
@@ -136,3 +137,4 @@ DEPENDENCIES
   russian
   webrat
   will_paginate (= 3.0.pre2)
+  ya2yaml
