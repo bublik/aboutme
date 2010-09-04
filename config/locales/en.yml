@@ -1,25 +1,335 @@
-en:
+--- 
+en: 
+  actions: Capabilities
+  activerecord: 
+    attributes: 
+      category: 
+        title: Name
+      message: 
+        categories: Sections
+        content: Content
+        published: Publish
+        tags: Tags
+        title: Theme
+      user: 
+        current_password: "Current password"
+        email: Email
+        full_name: "Full Name"
+        password: Password
+        password_confirmation: "Repeat password"
+    errors: 
+      full_messages: 
+        format: "{{attribute}} ((message))"
+      messages: 
+        accepted: "to confirm"
+        blank: "can not be empty"
+        confirmation: "does not coincide with confirmation"
+        empty: "can not be empty"
+        equal_to: "can only have a value equal {{count}}"
+        even: "can have only odd values"
+        exclusion: "has a reserved value"
+        greater_than: "can only have a value greater {{count}}"
+        greater_than_or_equal_to: "can only have a value greater than or equal {{count}}"
+        inclusion: "has an unintended meaning"
+        invalid: "has an invalid value"
+        less_than: "can only have a value less than {{count}}"
+        less_than_or_equal_to: "can have a value less than or equal {{count}}"
+        not_a_number: "not a number"
+        odd: "can have only even values"
+        record_invalid: "Validation failed: %{errors}"
+        taken: "has already been taken"
+        too_long: 
+          few: "too long (can not be more than {{count}} characters)"
+          many: "too long (can not be more than {{count}} characters)"
+          one: "too long (can not be more than {{count}} symbol)"
+          other: "too long (can not be more than {{count}} characters)"
+        too_short: 
+          few: "insufficient length (can not be less {{count}} characters)"
+          many: "insufficient length (can not be less {{count}} characters)"
+          one: "insufficient length (can not be less {{count}} characters)"
+          other: "insufficient length (can not be less {{count}} characters)"
+        wrong_length: 
+          few: "incorrect length (can be up exactly {{count}} characters)"
+          many: "incorrect length (can be up exactly {{count}} characters)"
+          one: "incorrect length (can be up exactly {{count}} symbol)"
+          other: "incorrect length (can be up exactly {{count}} characters)"
+      template: 
+        body: "Problems have arisen with the following fields:"
+        header: 
+          few: "{{model}}: save failed due to ((count)) errors"
+          many: "{{model}}: save failed due to ((count)) errors"
+          one: "{{model}}: save failed due to ((count)) errors"
+          other: "{{model}}: save failed due to ((count)) errors"
+    models: 
+      category: Section
+      message: Message
+      user: User
+  are_you_sure: "Вы уверены в своих действиях?"
+  attributes: 
+    created_at: "Created at"
+    updated_at: "Updated at"
+  back: назад
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years: 
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days: 
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months: 
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds: 
+        one: "1 second"
+        other: "%{count} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  destroy: drop.
+  devise: 
+    confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+    failure: 
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    passwords: 
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      signed_up: "You have signed up successfully. If enabled, a confirmation was sent to your e-mail."
+      updated: "You updated your account successfully."
+    sessions: 
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      unlocked: "Your account was successfully unlocked. You are now signed in."
+  edit: Изм.
+  error404: "Такой страницы нет, возможно она перемещена ил иудалена."
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "must be accepted"
+      already_confirmed: "was already confirmed"
+      blank: "can't be blank"
+      confirmation: "doesn't match confirmation"
+      empty: "can't be empty"
+      equal_to: "must be equal to %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "is not included in the list"
+      invalid: "is invalid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      not_found: "not found"
+      not_locked: "was not locked"
+      odd: "must be odd"
+      too_long: "is too long (maximum is %{count} characters)"
+      too_short: "is too short (minimum is %{count} characters)"
+      wrong_length: "is the wrong length (should be %{count} characters)"
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} was successfully created."
+      destroy: 
+        alert: "%{resource_name} could not be destroyed."
+        notice: "%{resource_name} was successfully destroyed."
+      update: 
+        notice: "%{resource_name} was successfully updated."
+    category: 
+      create: 
+        notice: "% {resource_name} successfully added"
+      destroy: 
+        alert: "%{resource_name} can not be removed"
+        notice: "%{resource_name}  removed"
+      update: 
+        notice: "%{resource_name}  successfully changed"
   hello: "Привет Свет"
-  actions: 'Возможности'
-  show: 'Посм.'
-  edit: 'Изм.'
-  destroy: 'Удал.'
-  back: 'назад'
-  are_you_sure: 'Вы уверены в своих действиях?'
-  error404: 'Такой страницы нет, возможно она перемещена ил иудалена.'
-  layouts:
-    header:
-      new_message: 'Доб. запись'
-      home: 'Главная'
-      login: 'Войти'
-      logout: 'Выйти'
-      profile: 'Профайл'
-      drafts: 'Черновики'
-  messages:
-    index:
-      title: 'Список записей'
-      new_message: 'Новая записка'
-    new:
-      title: 'Новая запись'
-    edit:
-      title: 'Редактирование'
+  helpers: 
+    select: 
+      prompt: "Please select"
+    submit: 
+      create: "Create %{model}"
+      post: 
+        create: "Add% (model)"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+  layouts: 
+    header: 
+      drafts: Drafts
+      home: Home
+      login: Login
+      logout: Exit
+      new_message: "Add record"
+      profile: Profile
+      tag_cloud: Tags
+    navigation: 
+      categories: Sections
+      new_category: New
+  messages: 
+    edit: 
+      title: Editing
+    index: 
+      messages_not_found: "In this section, no articles"
+      new_message: "New Note"
+      title: "List records"
+    new: 
+      title: "New record"
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ""
+      format: 
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  show: Посм.
+  support: 
+    array: 
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
