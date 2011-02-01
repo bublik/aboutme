@@ -18,6 +18,7 @@ gem 'ckeditor', '3.4.0.pre'
 gem 'paperclip'
 gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
+gem 'ya2yaml'
 
  group :development, :test do
    gem 'ruby-debug'
