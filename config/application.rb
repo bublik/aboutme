@@ -34,7 +34,7 @@ module Aboutme
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
-    
+
     # JavaScript files you want as :defaults (application.js is always included).
     config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.1.min rails jquery-ui-1.8.4.custom.min)
 

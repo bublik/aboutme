@@ -19,7 +19,7 @@ gem 'paperclip'
 gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
 
- group :development, :test, :spec do
+ group :development, :test do
    gem 'ruby-debug'
    gem 'autotest'
    gem 'faker' #http://faker.rubyforge.org/rdoc/
