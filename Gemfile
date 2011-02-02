@@ -11,7 +11,7 @@ gem 'haml', '3.0.18'
 gem 'hpricot'
 gem 'ruby_parser'
 
-gem 'devise', '1.1.5'
+gem 'devise', '1.2.rc'
 gem 'responders' #dry flash
 gem 'russian'
 gem 'ckeditor', '3.4.0.pre'
