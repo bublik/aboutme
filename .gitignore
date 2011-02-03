@@ -3,7 +3,7 @@
 config/database.yml
 config/config.yml
 db/*.sqlite3
-log/*.log
+log/*
 tmp/**/*
 nbproject/*
 public/ckeditor_assets/*
