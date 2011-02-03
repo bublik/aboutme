@@ -36,7 +36,7 @@ GEM
       ZenTest (>= 4.4.1)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    ckeditor (3.4.2.pre)
+    ckeditor (3.5.0)
       mime-types (>= 1.16)
     columnize (0.3.2)
     devise (1.2.rc)
@@ -131,7 +131,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   autotest
-  ckeditor (= 3.4.2.pre)
+  ckeditor (= 3.5.0)
   devise (= 1.2.rc)
   faker
   haml (= 3.0.18)

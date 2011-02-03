@@ -14,7 +14,7 @@ gem 'ruby_parser'
 gem 'devise', '1.2.rc'
 gem 'responders' #dry flash
 gem 'russian'
-gem 'ckeditor', '3.4.2.pre'
+gem 'ckeditor', '3.5.0'
 gem 'paperclip'
 gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
