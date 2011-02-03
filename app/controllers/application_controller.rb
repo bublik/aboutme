@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :check_black_list
   before_filter :authenticate_user!, :except => [:show, :index]
-
+  before_filter :authenticate_user! :unless => :devise_controller?
 
   private
   def not_found
