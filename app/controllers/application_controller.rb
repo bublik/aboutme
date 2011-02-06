@@ -7,8 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :check_black_list
-  before_filter :authenticate_user!, :except => [:show, :index]
-  before_filter :authenticate_user!, :unless => :devise_controller?
+  before_filter :authenticate_user!, :except => [:show, :index], :unless => :devise_controller?
 
   private
   def not_found
