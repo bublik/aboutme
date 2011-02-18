@@ -7,7 +7,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'haml', '3.0.18'
+gem 'haml', '3.0.25'
 gem 'hpricot'
 gem 'ruby_parser'
 

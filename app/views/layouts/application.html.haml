@@ -17,6 +17,7 @@
 
       .page= yield
 
+      %div= add_this
       #footer.clear.bottom.small
         &copy; 2010
         = " | ".html_safe + link_to('AboutMe', 'http://github.com/bublik/aboutme') + " | "
@@ -25,3 +26,4 @@
     = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie'
+
