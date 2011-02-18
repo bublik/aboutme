@@ -24,7 +24,8 @@ module ApplicationHelper
   end
 
   def add_this
-    '<!-- AddThis Button BEGIN -->
+    '<script type="text/javascript"> var addthis_config = { ui_language: "ru"} </script>
+    <!-- AddThis Button BEGIN -->
     <div class="addthis_toolbox addthis_default_style ">
     <a class="addthis_button_vk" fb:like:layout="button_count"></a>
     <a class="addthis_button_facebook"></a>
