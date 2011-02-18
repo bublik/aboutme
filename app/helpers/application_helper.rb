@@ -38,6 +38,6 @@ module ApplicationHelper
     </div>
     <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=rebisall"></script>
-    <!-- AddThis Button END -->'
+    <!-- AddThis Button END -->'.html_safe
   end
 end
