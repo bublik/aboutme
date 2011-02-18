@@ -13,11 +13,12 @@
       #header.top
         = render :partial => 'layouts/header'
         = render_flash_messages
-      .navigation= render :partial => 'layouts/navigation'
+      .navigation
+        = render :partial => 'layouts/navigation'
+        = add_this
 
       .page= yield
 
-      %div= add_this
       #footer.clear.bottom.small
         &copy; 2010
         = " | ".html_safe + link_to('AboutMe', 'http://github.com/bublik/aboutme') + " | "
