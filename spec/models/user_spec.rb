@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe User do
   it 'should not created user with out full_name' do
+    puts Faker::Internet.email.inspect
     user = User.create(
       # :full_name => Faker::Name.name + "#{num}",
       :email => Faker::Internet.email,
