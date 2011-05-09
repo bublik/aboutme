@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  respond_to :html, :xml
+  respond_to :html, :xml, :rss
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   before_filter :find_message, :only => [:show]
