@@ -1,12 +1,13 @@
 source 'http://rubygems.org'
 source :gemcutter
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'mysql2'
+#gem 'pg'
 gem 'haml', '3.0.25'
 gem 'hpricot'
 gem 'ruby_parser'
@@ -14,7 +15,7 @@ gem 'ruby_parser'
 gem 'jquery-rails', '>= 0.2.6'
 
 
-gem 'devise', '1.2.rc'
+gem 'devise'
 gem 'responders' #dry flash
 gem 'russian'
 gem 'ckeditor', '3.5.0'

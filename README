@@ -32,7 +32,14 @@ rake db:create
 rake db:migrate
 rake db:seed #need in development mode
 
+# will test created user
+# :email => "admin@email.com"
+# :password => "administrator"
+
+
+
 == Changelog
+06 Nov - updated rails to 3.1, changed default DB to mysql2
 29 Aug - added Categories for messages
 28 Aug - added ActsAsTaggableOn  tagging for messages
 27 Aug - added ckeditor and paperclip for upload images and files to message
