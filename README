@@ -1,5 +1,5 @@
 == Welcome
-development on Rails 3.0.6
+development on Rails 3.1
 
 Builded on
   * JQuery 1.4.1 (recomended for rails 3)
@@ -35,7 +35,6 @@ rake db:seed #need in development mode
 # will test created user
 # :email => "admin@email.com"
 # :password => "administrator"
-
 
 
 == Changelog
