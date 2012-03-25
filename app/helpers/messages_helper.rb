@@ -11,7 +11,7 @@ module MessagesHelper
 
   def message_created(message)
     content_tag(:div, '', :class => 'ui-icon ui-icon-calendar', :style => "float: left; margin-right: 0.3em;") +
-      content_tag(:em, l(message.created_at, :format => 'short')) + ' / '+
+      content_tag(:em, l(message.created_at, :format => 'long')) + ' / '+
       content_tag(:strong, message.user.full_name)
   end
 
