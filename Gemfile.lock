@@ -1,7 +1,6 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    ZenTest (4.6.2)
     actionmailer (3.1.0)
       actionpack (= 3.1.0)
       mail (~> 2.3.0)
@@ -34,8 +33,6 @@ GEM
     acts-as-taggable-on (2.1.1)
       rails
     arel (2.2.1)
-    autotest (4.4.6)
-      ZenTest (>= 4.4.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     ckeditor (3.5.0)
@@ -156,7 +153,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  autotest
   ckeditor (= 3.5.0)
   devise
   faker
