@@ -26,7 +26,7 @@ gem 'ya2yaml'
 
  group :development, :test do
    gem 'ruby-debug'
-   gem 'autotest'
+#   gem 'autotest'
    gem 'faker' #http://faker.rubyforge.org/rdoc/
    gem 'rspec'
    gem 'webrat'
