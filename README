@@ -30,7 +30,7 @@ vi ./config/config.yml
 
 rake db:create
 rake db:migrate
-rake db:seed #need in development mode
+rake db:seed #required in development mode
 
 # will test created user
 # :email => "admin@email.com"
