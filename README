@@ -17,27 +17,43 @@ bundle install
 If your Hosting does not have rails 3.*
 you can add own gems to bundle directory
 
-bundle install --deployment
+1)
+  bundle install --deployment
 
-Known  mod_rails bug rails 3.0.3 and passenger 3.0.2
-#http://code.google.com/p/phusion-passenger/issues/detail?id=611&colspec=ID%20Type%20Status%20Priority%20Milestone%20Stars%20Summary
+  Known  mod_rails bug rails 3.0.3 and passenger 3.0.2
+  #http://code.google.com/p/phusion-passenger/issues/detail?id=611&colspec=ID%20Type%20Status%20Priority%20Milestone%20Stars%20Summary
 
-cp ./config/database.yml.example  ./config/database.yml
-vi ./config/database.yml
+  cp ./config/database.yml.example  ./config/database.yml
+  vi ./config/database.yml
 
-cp ./config/config.yml.example  ./config/config.yml
-vi ./config/config.yml
+  cp ./config/config.yml.example  ./config/config.yml
+  vi ./config/config.yml
 
-rake db:create
-rake db:migrate
-rake db:seed #required in development mode
+2)
+  rake db:create
+  rake db:migrate
 
-# will test created user
-# :email => "admin@email.com"
-# :password => "administrator"
+2.1)
+  rake db:seed #required in development mode
+  # will test created user
+  # :email => "admin@email.com"
+  # :password => "administrator"
+  or create new user from web
+
+3)
+  # Grant admin role by email from console
+  rake user:admin
+
+== Extend your application
+ If you want to create new User roles
+ please read https://github.com/EppO/rolify
 
 
 == Changelog
+2012
+03 Jun - added admin role rake task, to manage all messages and categories
+
+2011
 06 Nov - updated rails to 3.1, changed default DB to mysql2
 29 Aug - added Categories for messages
 28 Aug - added ActsAsTaggableOn  tagging for messages

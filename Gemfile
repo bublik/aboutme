@@ -6,8 +6,8 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2'
-gem 'pg'
+gem 'mysql2', '< 0.3'
+#gem 'pg'
 gem 'haml', '3.0.25'
 gem 'hpricot'
 gem 'ruby_parser'
@@ -16,6 +16,9 @@ gem 'jquery-rails', '>= 0.2.6'
 
 
 gem 'devise'
+#gem 'cancan'
+gem 'rolify'
+
 gem 'responders' #dry flash
 gem 'russian'
 gem 'ckeditor', '3.5.0'

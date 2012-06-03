@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.xml
   def destroy
-    @category.destroy
+    @category.destroy if current_user.admin?
     respond_with(@category)
   end
 
