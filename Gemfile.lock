@@ -65,7 +65,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.18)
-    mysql2 (0.2.11)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
     paperclip (2.4.5)
@@ -73,6 +72,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.11.0)
     polyglot (0.3.3)
     rack (1.2.5)
     rack-mount (0.6.14)
@@ -145,8 +145,8 @@ DEPENDENCIES
   haml-rails
   hpricot
   jquery-rails (>= 0.2.6)
-  mysql2 (< 0.3)
   paperclip
+  pg
   rails (= 3.0.7)
   responders
   rolify
