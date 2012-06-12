@@ -31,14 +31,14 @@
         = link_to('RubyClub', 'http://rubyclub.com.ua')
 
     = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
-      :javascript
-        window.___gcfg = {lang: 'ru'};
+    :javascript
+      window.___gcfg = {lang: 'ru'};
 
-        (function() {
-          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-          po.src = 'https://apis.google.com/js/plusone.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-        })();
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
 
     /[if lt IE 8]
       = stylesheet_link_tag 'ie'
