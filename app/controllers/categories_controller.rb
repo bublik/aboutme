@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  before_filter :init_post, :only => [:destroy, :edit, :update]
+
   def index
     redirect_to(root_path)
   end
@@ -17,7 +19,6 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @category = Category.find(params[:id])
   end
 
   # POST /categories
@@ -34,7 +35,6 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.xml
   def update
-    @category = Category.find(params[:id])
     @category.update_attributes(params[:category])
     respond_with(@category)
   end
@@ -42,8 +42,12 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.xml
   def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
+    @category.destroy if current_user.admin?
     respond_with(@category)
+  end
+
+  private
+  def init_post
+    @category = Category.find(params[:id])
   end
 end

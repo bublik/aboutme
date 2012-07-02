@@ -1,12 +1,12 @@
 #source 'http://rubygems.org'
 source :gemcutter
 
-gem 'rails', '3.1'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2'
+#gem 'mysql2', '< 0.3'
 gem 'pg'
 gem 'haml', '3.0.25'
 gem 'hpricot'
@@ -16,6 +16,9 @@ gem 'jquery-rails', '>= 0.2.6'
 
 
 gem 'devise'
+#gem 'cancan'
+gem 'rolify'
+
 gem 'responders' #dry flash
 gem 'russian'
 gem 'ckeditor', '3.5.0'
@@ -26,7 +29,7 @@ gem 'ya2yaml'
 
  group :development, :test do
    gem 'ruby-debug'
-   gem 'autotest'
+#   gem 'autotest'
    gem 'faker' #http://faker.rubyforge.org/rdoc/
    gem 'rspec'
    gem 'webrat'

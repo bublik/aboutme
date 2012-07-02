@@ -1,20 +1,21 @@
 !!! 1.1
 %html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type"}
-    %meta{:name => "keywords", :lang => "ru", :content => yield(:keywords) +' '+ APP_CONFIG['keywords']}
-    %meta{:name => "description", :lang => "ru", :content => yield(:description) +' '+ APP_CONFIG['description']}
-    %link{:rel => "shortcut icon", :href => "/images/favicon.gif"}
+    %meta{ :content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-type'}
+    %meta{:name => 'keywords', :lang => "ru", :content => yield(:keywords) +' '+ APP_CONFIG['keywords']}
+    %meta{:name => 'description', :lang => "ru", :content => yield(:description) +' '+ APP_CONFIG['description']}
+    %link{:rel => 'shortcut icon', :href => '/images/favicon.gif'}
     %title= yield(:title) ? yield(:title) : APP_CONFIG['site_name']
     = auto_discovery_link_tag('rss', '/messages.rss', {:title => "RSS #{APP_CONFIG['site_name']}"})
     = csrf_meta_tag
     = javascript_include_tag :defaults
+    %link{:rel => 'canonical', :href => request.env['REQUEST_URI']}
   %body
     - unless APP_CONFIG['google_analytics_uacct'].blank?
       :javascript
         window.google_analytics_uacct = '#{APP_CONFIG['google_analytics_uacct']}';
     #container.container
-      = link_to(image_tag('https://assets2.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_red_aa0000.png&path=', :style => 'position: absolute; top: 0; right: 0; border: 0;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
+      = link_to(image_tag('/images/forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
       #header.top
         = render :partial => 'layouts/header'
         = render_flash_messages
@@ -30,6 +31,15 @@
         = link_to('RubyClub', 'http://rubyclub.com.ua')
 
     = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
+    :javascript
+      window.___gcfg = {lang: 'ru'};
+
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+
     /[if lt IE 8]
       = stylesheet_link_tag 'ie'
     - unless APP_CONFIG['google_analytics_uacct'].blank?

@@ -21,7 +21,7 @@
 .container .page { min-height: 600px; width: 78%; float: left;}
 .container .navigation { min-height: 600px; width: 20%; float: right }
 .category {padding: 4px; font-size: 1.1em; clear: both}
-.category a {text-decoration: none; }
+.category a {text-decoration: none; color: #5c9ccc}
 .category a:hover {color: #ff925c }
 .category .action {float: right; font-size: 0.6em}
 
@@ -67,4 +67,4 @@ input.cke_dialog_ui_input_text {
 .css3 { font-size: 1.4em }
 .css4 { font-size: 1.6em }
 
-.navigation .category {font-size: 0.8em}
+ .navigation .ui-widget-content .category a{font-size: 0.8em; color: #5c9ccc}

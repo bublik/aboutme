@@ -28,4 +28,10 @@ ru:
       title: 'Новая запись'
     edit:
       title: 'Редактирование'
+  categories:
+    new:
+      title: 'Новый раздел'
+    edit:
+      title: 'Изменить раздел'
+
 

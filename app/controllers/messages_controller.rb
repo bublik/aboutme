@@ -85,7 +85,7 @@ class MessagesController < ApplicationController
   end
 
   def find_own_message
-    @message = current_user.messages.find(params[:id])
+    @message = (current_user.admin? ? Message : current_user.messages).find(params[:id])
   end
 
   def ping(message)
