@@ -1,5 +1,5 @@
 Aboutme::Application.routes.draw do
-  
+
   resources :categories
   resources :messages do
     collection do
@@ -16,10 +16,12 @@ Aboutme::Application.routes.draw do
   match '/messages/tag/:tag' => "messages#tag", :as => :msg_tag
 
   devise_for :users, :path_names => {
-    :sign_in => 'login', :sign_out => 'logout',
+    :sign_in => 'login',
+    :sign_out => 'logout',
     :password => 'secret'
-  }
-  
+  } do
+    resources :sessions, :only => [:create, :destroy]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
