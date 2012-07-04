@@ -8,7 +8,7 @@
     %title= yield(:title) ? yield(:title) : APP_CONFIG['site_name']
     = auto_discovery_link_tag('rss', '/messages.rss', {:title => "RSS #{APP_CONFIG['site_name']}"})
     = csrf_meta_tag
-    = javascript_include_tag :defaults
+    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.4.custom.min', 'rails', 'application'
     %link{:rel => 'canonical', :href => request.env['REQUEST_URI']}
   %body
     - unless APP_CONFIG['google_analytics_uacct'].blank?
