@@ -47,7 +47,8 @@ class MessagesController < ApplicationController
     @message.tag_list = params[:tags]
 
     if @message.save
-      ping(@message) if APP_CONFIG['ping_enabled']
+    # TODO add rss path for pinging in *ping*  method
+    #  ping(@message) if APP_CONFIG['ping_enabled']
     end
     respond_with(@message, :flash => true)
   end
@@ -90,7 +91,8 @@ class MessagesController < ApplicationController
 
   def ping(message)
     ::Pinging.new(
-      APP_CONFIG['site_name'], url_for( :host => request.host),
+      APP_CONFIG['site_name'],
+      url_for(:host => request.host),
       url_for(:host => request.host, :controller => 'messages', :action => 'show', :id => message.id),
       APP_CONFIG['keywords'].gsub(',', '|')
     ).ping_all
