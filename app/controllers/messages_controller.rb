@@ -89,7 +89,7 @@ class MessagesController < ApplicationController
   end
 
   def ping(message)
-    Pinging.new(
+    ::Pinging.new(
       APP_CONFIG['site_name'], url_for( :host => request.host),
       url_for(:host => request.host, :controller => 'messages', :action => 'show', :id => message.id),
       APP_CONFIG['keywords'].gsub(',', '|')
