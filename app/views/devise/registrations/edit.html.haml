@@ -9,6 +9,19 @@
     = f.label :full_name
     %br/
     = f.text_field :full_name
+
+  %div
+    = f.label :token_authentication_key
+    %br/
+    = resource.authentication_token.blank? ? "Token Empty" : resource.authentication_token
+    = link_to "Generate Token", token_authentications_path(:new_token => resource.id), :method => :post, :confirm => "Are you sure?"
+
+    - if resource.authentication_token
+      = link_to "Delete Token", token_authentication_path(resource), :method => :delete, :confirm => "Are you sure?"
+      %div
+        You can use this url to login
+        = link_to "http://#{request.host}:#{request.port}#{root_path(:auth_token => resource.authentication_token)}", root_path(:auth_token => resource.authentication_token)
+
   %p
     = f.label :password
     %i (оставьте пустым если не хотите изменять)

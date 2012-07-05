@@ -15,14 +15,16 @@ Aboutme::Application.routes.draw do
   root :to => 'messages#index'
   match '/messages/tag/:tag' => "messages#tag", :as => :msg_tag
 
-  devise_for :users, :path_names => {
-    :sign_in => 'login',
-    :sign_out => 'logout',
-    :password => 'secret'
-  } do
+  devise_for :users, :controllers => { :sessions => "sessions" } , :path_names => {
+      :sign_in => 'login',
+      :sign_out => 'logout',
+      :password => 'secret'
+  }
+  devise_scope :user do
     resources :sessions, :only => [:create, :destroy]
   end
 
+  resources :token_authentications, :only => [:create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
