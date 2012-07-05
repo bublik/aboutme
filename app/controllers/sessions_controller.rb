@@ -4,7 +4,8 @@ class SessionsController < Devise::SessionsController
       format.html { super }
       format.xml {
         warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
-        render :status => 200, :xml => { :session => { :auth_token => current_user.authentication_token }}
+        render :status => 200, :xml => { :session => {
+            :auth_token => current_user.authentication_token }}
       }
 
       format.json {
