@@ -11,10 +11,11 @@ describe MessagesController do
   end
 
   before(:each) do
-    mock_user.stub(:messages){mock_message}
+    mock_user.stub(:messages) { mock_message }
+    mock_user.stub(:admin?) { false }
     Message.stub(:find).and_return(mock_message)
-    @controller.stub(:authenticate_user!){true}
-    @controller.stub(:current_user){mock_user}
+    @controller.stub(:authenticate_user!) { true }
+    @controller.stub(:current_user) { mock_user }
   end
 
   describe "GET index" do
@@ -88,7 +89,7 @@ describe MessagesController do
       end
 
       it "re-renders the 'new' template" do
-        mock_message.should_receive(:save){ false }
+        mock_message.should_receive(:save) { false }
         mock_message.errors[:title] = 'blank title'
         Message.stub(:new) { mock_message(:save => false, :errors => [:title, 'blank']) }
         post :create, :message => {}
@@ -154,7 +155,7 @@ describe MessagesController do
 
     it "should not be sestroyed and rendered flash message" do
       mock_message.errors[:user] = 'cant be  destroyes'
-      mock_message.stub(:destroy){false}
+      mock_message.stub(:destroy) { false }
       mock_message.should_receive(:find).with("37") { mock_message }
       delete :destroy, :id => "37"
       flash[:alert].should_not be_blank
