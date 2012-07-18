@@ -15,7 +15,7 @@ Aboutme::Application.routes.draw do
   root :to => 'messages#index'
   match '/messages/tag/:tag' => "messages#tag", :as => :msg_tag
 
-  devise_for :users, :controllers => { :sessions => "sessions" } , :path_names => {
+  devise_for :users, :controllers => { :sessions => "devise/sessions" } , :path_names => {
       :sign_in => 'login',
       :sign_out => 'logout',
       :password => 'secret'
@@ -24,7 +24,11 @@ Aboutme::Application.routes.draw do
     resources :sessions, :only => [:create, :destroy]
   end
 
-  resources :token_authentications, :only => [:create, :destroy]
+  resources :token_authentications, :only => [:create, :destroy]    do
+    member do
+      get 'create'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
