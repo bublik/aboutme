@@ -9,7 +9,14 @@
     = f.label :full_name
     %br/
     = f.text_field :full_name
-
+  %div
+    = f.label :google_plus_id, 'Google+ ID'
+    %br/
+    = f.text_field :google_plus_id
+    %br/
+    %small
+      используется для авторства записей в блоге
+      %a{:href => 'http://support.google.com/webmasters/bin/answer.py?hl=en&answer=1408986'} подробней
   %div
     = f.label :token_authentication_key
     %br/

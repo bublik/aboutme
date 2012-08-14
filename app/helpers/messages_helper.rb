@@ -11,9 +11,9 @@ module MessagesHelper
   end
 
   def message_created(message)
-    content_tag(:div, '', :class => 'ui-icon ui-icon-calendar', :style => "float: left; margin-right: 0.3em;") +
-        content_tag(:em, I18n.localize(message.created_at, :format => :long)) + ' / '+
-        content_tag(:strong, message.user.full_name)
+    created = content_tag(:div, '', :class => 'ui-icon ui-icon-calendar', :style => "float: left; margin-right: 0.3em;") +
+        content_tag(:em, I18n.localize(message.created_at, :format => :long)) + ' / ' + content_tag(:strong, message.user.full_name)
+    message.user.google_plus_id.blank? ? created : created + ' ' + link_to('Google+', "https://plus.google.com/#{message.user.google_plus_id}?rel=author")
   end
 
   def message_tags(message)

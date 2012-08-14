@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704194607) do
+ActiveRecord::Schema.define(:version => 20120814065958) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120704194607) do
     t.string   "assetable_type",    :limit => 30
     t.string   "type",              :limit => 25
     t.string   "guid",              :limit => 10
-    t.integer  "locale",            :limit => 1,  :default => 0
+    t.integer  "locale",            :limit => 2,  :default => 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20120704194607) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "authentication_token"
+    t.string   "google_plus_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

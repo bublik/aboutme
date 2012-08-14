@@ -6,14 +6,6 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-user = User.new(
-   :full_name => "Admin pass(administrator)",
-   :email => "admin@email.com",
-   :password => "administrator",
-   :password_confirmation => "administrator"
- )
-
-raise user.errors.full_messages unless user.save
 25.times do |num|
  user = User.create(
     :full_name => Faker::Name.name + "#{num}",
@@ -23,8 +15,8 @@ raise user.errors.full_messages unless user.save
   )
 
 Message.create!(
-  :title => Faker::Lorem.sentence(5), 
-  :content => Faker::Lorem.paragraph, 
+  :title => Faker::Lorem.sentence(5),
+  :content => Faker::Lorem.paragraph,
   :user => user,
   :published => [0,1].shuffle.first
 )

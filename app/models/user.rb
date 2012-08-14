@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
          :token_authenticatable #, :encryptable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :full_name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :full_name, :email, :password, :password_confirmation, :remember_me, :google_plus_id
 
   validates_uniqueness_of :email, :case_sensitive => false
   before_create :ensure_authentication_token

@@ -19,6 +19,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
+
+    user = User.new(
+        :full_name => "Admin pass(administrator)",
+        :email => "admin@email.com",
+        :password => "administrator",
+        :password_confirmation => "administrator"
+    )
+    raise user.errors.full_messages unless user.save
   end
 
   def self.down
