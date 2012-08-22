@@ -2,7 +2,8 @@ module MessagesHelper
   include ActsAsTaggableOn::TagsHelper
 
   def author(user)
-    name_with_image = image_tag(avatar_url(user, 20), :class => 'img-circle') + ' ' + content_tag(:strong, user.full_name, :class => '')
+    name_with_image = image_tag(avatar_url(user, 20), :class => 'img-circle', :width => '20', :height => '20', :alt => user.full_name ) + ' ' +
+        content_tag(:strong, user.full_name, :class => '')
     user.google_plus_id.blank? ? name_with_image : name_with_image + ' ' + link_to('Google+', "https://plus.google.com/#{user.google_plus_id}?rel=author")
   end
 
