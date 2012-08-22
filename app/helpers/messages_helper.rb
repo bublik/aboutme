@@ -3,7 +3,7 @@ module MessagesHelper
 
   def author(user)
     name_with_image = image_tag(avatar_url(user, 20), :class => 'img-circle') + ' ' + content_tag(:strong, user.full_name, :class => '')
-    user.google_plus_id.blank? ? name_with_image : name_with_image + ' ' + link_to('Google+', "https://plus.google.com/#{message.user.google_plus_id}?rel=author")
+    user.google_plus_id.blank? ? name_with_image : name_with_image + ' ' + link_to('Google+', "https://plus.google.com/#{user.google_plus_id}?rel=author")
   end
 
   def message_actions(message)
