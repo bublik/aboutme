@@ -1,6 +1,11 @@
 module MessagesHelper
   include ActsAsTaggableOn::TagsHelper
 
+  def author(user)
+    name_with_image = image_tag(avatar_url(user, 20), :class => 'img-circle') + ' ' + content_tag(:strong, user.full_name, :class => '')
+    user.google_plus_id.blank? ? name_with_image : name_with_image + ' ' + link_to('Google+', "https://plus.google.com/#{message.user.google_plus_id}?rel=author")
+  end
+
   def message_actions(message)
     return '' if message.user_id != current_user.id && !current_user.admin?
     div_for(message, :class => 'actions') do
@@ -11,9 +16,9 @@ module MessagesHelper
   end
 
   def message_created(message)
-    created = content_tag(:div, '', :class => 'ui-icon ui-icon-calendar', :style => "float: left; margin-right: 0.3em;") +
-        content_tag(:em, I18n.localize(message.created_at, :format => :long)) + ' / ' + content_tag(:strong, message.user.full_name)
-    message.user.google_plus_id.blank? ? created : created + ' ' + link_to('Google+', "https://plus.google.com/#{message.user.google_plus_id}?rel=author")
+    content_tag(:div, '', :class => 'ui-icon ui-icon-calendar', :style => "float: left; margin-right: 0.3em;") +
+        content_tag(:em, I18n.localize(message.created_at, :format => :long))
+
   end
 
   def message_tags(message)

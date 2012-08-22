@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
     self.has_role?(:admin)
   end
 
+  #todo add ser defined avatar url
+  # currently we will use http://ru.gravatar.com/site/implement/images/
+  def avatar_url
+    nil
+  end
 end

@@ -41,4 +41,15 @@ module ApplicationHelper
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=rebisall"></script>
     <!-- AddThis Button END -->'.html_safe
   end
+
+  #size 20,40,80,160,200
+  def avatar_url(user, size = 48)
+    if user.avatar_url.present?
+      user.avatar_url
+    else
+      default_url = "#{root_url}images/guest.png"
+      gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
+    end
+  end
 end
