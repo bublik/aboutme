@@ -1,10 +1,9 @@
 == Welcome
-development on Rails 3.1
+development on Rails 3.2.15
 
 Builded on
-  * JQuery 1.4.1 (recomended for rails 3)
-  * JQuery UI (customized)
-  * Blueprint (CSS Framework)
+  * JQuery
+  * TwitterBootstrap (TODO)
   * HAML
   * devise (simple authentification for rails app)
   * CKeditor
@@ -21,9 +20,6 @@ you can add own gems to bundle directory
 
 1)
   bundle install --deployment
-
-  Known  mod_rails bug rails 3.0.3 and passenger 3.0.2
-  #http://code.google.com/p/phusion-passenger/issues/detail?id=611&colspec=ID%20Type%20Status%20Priority%20Milestone%20Stars%20Summary
 
   cp ./config/database.yml.example  ./config/database.yml
   vi ./config/database.yml
@@ -51,7 +47,16 @@ you can add own gems to bundle directory
  please read https://github.com/EppO/rolify
 
 
+== TODO
+- Fix user token after update devise
+- up to twitter bootstrap 3
+- make simple phonegap application for images posting
+
+
 == Changelog
+2013
+11 Dec - Unstiled JS/CSS, updated to rails 3.2.15
+
 2012
 03 Jun - added admin role rake task, to manage all messages and categories
 

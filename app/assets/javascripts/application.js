@@ -1,7 +1,9 @@
+//= require jquery
+//= require jquery_ujs
+//= require ckeditor/init
+
 $(document).ready( function(){
-  $("button, input:submit, #header a, .pagination a, .pagination span").button();
-  $(".pagination em").button().addClass('ui-state-active');
-  $("#header").buttonset().css('margin-top', '-4px');
+  //$("button, input:submit, #header a, .pagination a, .pagination span")
 
   $(document).ready(function(){
     $('form[data-remote]').bind("ajax:before", function(){

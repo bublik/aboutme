@@ -1,38 +1,42 @@
-#source 'http://rubygems.org'
-source :gemcutter
+source 'https://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2', '< 0.3'
+#gem 'mysql2'
 gem 'pg'
-gem 'haml', '3.0.25'
+gem 'haml', '3.1.4'
 gem 'hpricot'
 gem 'ruby_parser'
 
-gem 'jquery-rails', '>= 0.2.6'
-
-
+gem 'jquery-rails'
 gem 'devise'
 #gem 'cancan'
 gem 'rolify'
 
 gem 'responders' #dry flash
 gem 'russian'
-gem 'ckeditor', '3.5.0'
+gem 'ckeditor'
 gem 'paperclip'
-gem 'will_paginate', '3.0.pre2'
+
+gem 'will_paginate'
 gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
 gem 'ya2yaml'
 
  group :development, :test do
-   gem 'ruby-debug'
+#   gem 'ruby-debug'
 #   gem 'autotest'
    gem 'faker' #http://faker.rubyforge.org/rdoc/
    gem 'rspec'
    gem 'webrat'
-   gem 'rspec-rails', ">= 2.0.0.beta.20"
+   gem 'rspec-rails'
    gem "haml-rails" #generator
  end
+
+group :assets do
+  gem 'sass-rails', '~> 3.2'
+  gem 'coffee-rails', '~> 3.2'
+  gem 'uglifier'
+end

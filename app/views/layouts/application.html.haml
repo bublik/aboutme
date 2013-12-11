@@ -8,14 +8,14 @@
     %title= yield(:title) ? yield(:title) : APP_CONFIG['site_name']
     = auto_discovery_link_tag('rss', '/messages.rss', {:title => "RSS #{APP_CONFIG['site_name']}"})
     = csrf_meta_tag
-    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.4.custom.min', 'rails', 'application'
+    = javascript_include_tag 'application'
     %link{:rel => 'canonical', :href => request.env['REQUEST_URI']}
   %body
     - unless APP_CONFIG['google_analytics_uacct'].blank?
       :javascript
         window.google_analytics_uacct = '#{APP_CONFIG['google_analytics_uacct']}';
     #container.container
-      = link_to(image_tag('/images/forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
+      = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
       #header.top
         = render :partial => 'layouts/header'
         = render_flash_messages
@@ -30,7 +30,7 @@
         |
         = link_to('LighCraft', 'http://lightcraft.com.ua')
 
-    = stylesheet_link_tag 'reset', 'typography', 'forms', 'application', 'redmond/jquery-ui-1.8.4.custom'
+    = stylesheet_link_tag 'application'
     :javascript
       window.___gcfg = {lang: 'ru'};
 

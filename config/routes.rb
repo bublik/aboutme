@@ -1,5 +1,4 @@
 Aboutme::Application.routes.draw do
-
   resources :categories
   resources :messages do
     collection do
@@ -29,6 +28,9 @@ Aboutme::Application.routes.draw do
       get 'create'
     end
   end
+
+  mount Ckeditor::Engine => "/ckeditor"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

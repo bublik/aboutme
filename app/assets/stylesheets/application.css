@@ -1,7 +1,6 @@
-/* 
-    Document   : aboutme
-    Created on : Aug 24, 2010, 6:03:06 PM
-    Author     : wr
+/*
+*= require_self
+*= require_tree .
 */
 
 #header {
@@ -107,7 +106,7 @@ a {
 }
 
 .draft {
-  background-image: url('/app/assets/images/draft.jpeg')
+  background-image: url('/assets/images/draft.jpeg')
 }
 
 input.cke_dialog_ui_input_text {
