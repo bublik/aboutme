@@ -1,0 +1,152 @@
+/* 
+    Document   : aboutme
+    Created on : Aug 24, 2010, 6:03:06 PM
+    Author     : wr
+*/
+
+#header {
+  padding-bottom: 10px
+}
+
+#flasher {
+  margin-top: 5px
+}
+
+#footer {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px dotted #D1E3EF;
+  text-align: center;
+  color: #7F7F7F
+}
+
+.container {
+  display: block;
+  width: 950px;
+  margin: 0 auto
+}
+
+.container .page {
+  min-height: 600px;
+  width: 78%;
+  float: left;
+}
+
+.container .navigation {
+  min-height: 600px;
+  width: 20%;
+  float: right
+}
+
+.category {
+  padding: 4px;
+  font-size: 1.1em;
+  clear: both
+}
+
+.category a {
+  text-decoration: none;
+  color: #5c9ccc
+}
+
+.category a:hover {
+  color: #ff925c
+}
+
+.category .action {
+  float: right;
+  font-size: 0.6em
+}
+
+h1, h2, h3, h4, h5 {
+  color: #ff925c
+}
+
+h1.ui-widget-header,
+h2.ui-widget-header,
+h3.ui-widget-header,
+h4.ui-widget-header,
+h5.ui-widget-header {
+  margin: 0;
+  padding: 5px
+}
+
+a {
+  color: #5c9ccc
+}
+
+/* Border on right hand side of a column. */
+.border-right {
+  padding-right: 4px;
+  margin-right: 5px;
+  border-right: 1px solid #a6c9e2
+}
+
+/* Use a .box to create a padded box inside a column.  */
+.box {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  background: #fcfdfd;
+}
+
+.vpadding {
+  padding-top: 5px;
+  padding-bottom: 5px
+}
+
+.clear {
+  clear: both
+}
+
+.left {
+  float: left
+}
+
+.right {
+  float: right
+}
+
+.draft {
+  background-image: url('/app/assets/images/draft.jpeg')
+}
+
+input.cke_dialog_ui_input_text {
+  font-size: 10px;
+  height: 0.8em;
+  margin: 0.5em 0
+}
+
+.ui-icon {
+  display: inline-block !important
+}
+
+.tags a {
+  font-size: 110%;
+  text-decoration: none
+}
+
+.css1 {
+  font-size: 1.0em
+}
+
+.css2 {
+  font-size: 1.2em
+}
+
+.css3 {
+  font-size: 1.4em
+}
+
+.css4 {
+  font-size: 1.6em
+}
+
+.img-circle {
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.navigation .ui-widget-content .category a {
+  font-size: 0.8em;
+  color: #5c9ccc
+}
