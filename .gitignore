@@ -10,4 +10,6 @@ public/ckeditor_assets/*
 public/stylesheets/scaffold.css
 app/controllers/application.rb
 vendor/bundle/
+.ruby-gemset
+.ruby-version
 
