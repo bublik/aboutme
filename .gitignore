@@ -12,4 +12,5 @@ app/controllers/application.rb
 vendor/bundle/
 .ruby-gemset
 .ruby-version
-
+.gemtags
+.tags

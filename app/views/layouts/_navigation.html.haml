@@ -1,8 +1,9 @@
-.ui-widget
-  %h4.ui-widget-header.ui-corner-top
-    .right= new_category_link if user_signed_in?
-    = t('.categories')
-  .ui-widget-content.ui-corner-bottom
-    = navigation_categories
+.navbar.navbar-default
+  .container-fluid
+    %h4.ui-widget-header.ui-corner-top
+      .right= new_category_link if user_signed_in?
+      = t('.categories')
+    .ui-widget-content.ui-corner-bottom
+      = navigation_categories
     
     

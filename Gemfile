@@ -24,6 +24,7 @@ gem 'paperclip'
 gem 'will_paginate'
 gem 'acts-as-taggable-on' #http://github.com/mbleigh/acts-as-taggable-on
 gem 'ya2yaml'
+gem 'bootstrap-sass'
 
  group :development, :test do
 #   gem 'ruby-debug'

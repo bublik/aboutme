@@ -1,7 +1,7 @@
-!!! 1.1
-%html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml"}
+!!! 5
+%html{:lang => "ru"}
   %head
-    %meta{ :content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-type'}
+    %meta{:charset => 'utf-8'}
     %meta{:name => 'keywords', :lang => "ru", :content => yield(:keywords) +' '+ APP_CONFIG['keywords']}
     %meta{:name => 'description', :lang => "ru", :content => yield(:description) +' '+ APP_CONFIG['description']}
     %link{:rel => 'shortcut icon', :href => '/images/favicon.gif'}
@@ -14,10 +14,10 @@
     - unless APP_CONFIG['google_analytics_uacct'].blank?
       :javascript
         window.google_analytics_uacct = '#{APP_CONFIG['google_analytics_uacct']}';
+    = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0; z-index: 1;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
+    = render :partial => 'layouts/header'
     #container.container
-      = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
       #header.top
-        = render :partial => 'layouts/header'
         = render_flash_messages
       .navigation
         = render :partial => 'layouts/navigation'
