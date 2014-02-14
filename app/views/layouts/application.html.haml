@@ -16,16 +16,18 @@
         window.google_analytics_uacct = '#{APP_CONFIG['google_analytics_uacct']}';
     = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0; z-index: 1;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
     = render :partial => 'layouts/header'
-    #container.container
-      #header.top
-        = render_flash_messages
-      .navigation
+    .container
+      .row= render_flash_messages
+    .container
+      .col-md-9
+        = yield
+      .col-md-3
         = render :partial => 'layouts/navigation'
-        .vpadding= add_this
+        .vpadding
+          = add_this
 
-      .page= yield
-
-      #footer.clear.bottom.small
+    #footer
+      .container
         &copy; 2010
         |
         = link_to('LighCraft', 'http://lightcraft.com.ua')

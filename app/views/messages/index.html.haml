@@ -2,15 +2,16 @@
 %h1= yield(:title)
 
 - @messages.each do |message|
-  %div
-    %h2= link_to(message.title, message)
-    = author(message.user)
-    .clear
-      = message_created(message)
-    =raw message.content
-    .clear.small
-      = message_tags(message)
-      -#= message_actions(message) if user_signed_in?
+  .row
+    .col-md-12
+      %h2= link_to(message.title, message)
+      = author(message.user)
+      .clear
+        = message_created(message)
+      =raw message.content
+      .clear.small
+        = message_tags(message)
+        -#= message_actions(message) if user_signed_in?
 
 .g-plus{'data-action' => 'share', 'data-height' => '24'}
 
