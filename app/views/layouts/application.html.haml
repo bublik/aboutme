@@ -17,7 +17,8 @@
     = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0; z-index: 1;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
     = render :partial => 'layouts/header'
     .container
-      .row= render_flash_messages
+      .row
+        = render_flash_messages
     .container
       .col-md-9
         = yield

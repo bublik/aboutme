@@ -3,11 +3,13 @@ module CategoriesHelper
   def navigation_categories
     Category.all.collect do |category|
       div_for(category) do
-        (user_signed_in? && current_user.admin? ?
-            content_tag(:div, :class => 'action') {
-              link_to(t('edit'), edit_category_path(category)) +
-                  link_to(t('destroy'), category, :confirm => 'Are you sure?', :method => :delete) } : ''.html_safe) +
-            link_to(h(category.title), category_messages_path(category), :title => category.title)
+        edit_links =  if user_signed_in? && current_user.admin?
+          link_to('', edit_category_path(category), class: 'glyphicon glyphicon-pencil text-success') +
+          link_to('', category, :confirm => 'Are you sure?', :method => :delete, class: 'glyphicon glyphicon-remove text-danger')
+        else
+          ''.html_safe 
+        end
+        link_to(h(category.title), category_messages_path(category), :title => category.title, class: "pull-left") + edit_links
       end
     end.join('').html_safe
   end

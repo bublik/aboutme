@@ -1,9 +1,6 @@
-.navbar.navbar-default
-  .container-fluid
-    %h4.ui-widget-header.ui-corner-top
-      .right= new_category_link if user_signed_in?
-      = t('.categories')
-    .ui-widget-content.ui-corner-bottom
-      = navigation_categories
+%h4= t('.categories')
+= navigation_categories
+- if user_signed_in?
+  %a{class: 'btn btn-default', href: new_category_path} Добавить раздел
     
     
