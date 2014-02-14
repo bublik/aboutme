@@ -1,6 +1,8 @@
 %h4= t('.categories')
 = navigation_categories
 - if user_signed_in?
-  %a{class: 'btn btn-default', href: new_category_path} Добавить раздел
+  %a{class: 'btn btn-primary', href: new_category_path} 
+    %i{class: 'glyphicon glyphicon-plus'}
+    Добавить раздел
     
     
