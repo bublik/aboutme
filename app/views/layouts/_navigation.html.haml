@@ -1,6 +1,13 @@
 %h4= t('.categories')
-= navigation_categories
-- if user_signed_in?
+%table
+  - Category.all.each do |category|
+    %tr
+      %td= link_to(h(category.title), category_messages_path(category), :title => category.title, class: "pull-left")
+      - if user_signed_in? && current_user.admin?
+        %td= link_to('', edit_category_path(category), class: 'btn glyphicon glyphicon-pencil text-success')
+        %td= link_to('', category, :confirm => 'Are you sure?', :method => :delete, class: 'btn glyphicon glyphicon-remove text-danger')
+/ = navigation_categories
+- if user_signed_in? && current_user.admin?
   %a{class: 'btn btn-primary', href: new_category_path} 
     %i{class: 'glyphicon glyphicon-plus'}
     Добавить раздел
