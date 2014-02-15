@@ -1,12 +1,2 @@
-- title(@message.title)
-%h1= yield(:title)
-= author(@message.user)
-.clear
-  = message_created(@message)
-  = message_actions(@message) if user_signed_in?
-%div{:class => !@message.published && 'draft'}
-  =raw @message.content
-.clear
-  = message_tags(@message)
-
+= render @message
 .g-plus{'data-action' => 'share', 'data-height' => '24'}
