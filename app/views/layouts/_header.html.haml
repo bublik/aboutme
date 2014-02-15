@@ -8,7 +8,7 @@
           %li= link_to(t('.new_message'), new_message_path)
           %li= link_to(t('.drafts'), draft_messages_path)
           %li= link_to(t('.profile'), edit_user_registration_path)
-          %li= link_to(t('.logout'), destroy_user_session_path)
+          %li= link_to(t('.logout'), destroy_user_session_path, :method => :delete)
         - else
           %li= link_to(t('.login'), new_user_session_path)
 
