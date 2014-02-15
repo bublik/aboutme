@@ -17,8 +17,9 @@ module MessagesHelper
   end
 
   def message_created(message)
-    content_tag(:div, '', :class => '', :style => "float: left; margin-right: 0.3em;") +
-        content_tag(:em, I18n.localize(message.created_at, :format => :long))
+    content_tag(:time,
+                I18n.localize(message.created_at, format: :long),
+                date: message.created_at.strftime('%Y-%M-%d'))
 
   end
 

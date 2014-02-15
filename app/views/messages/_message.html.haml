@@ -1,10 +1,11 @@
 .row
   .col-md-12
     %h2.page-header= link_to(message.title, message)
-    = image_tag(avatar_url(message.user, 100), :class => 'pull-left img-responsive img-circle',:alt => message.user.full_name)
-    %h2= message.user.full_name
+    .pull-right
+      = message_created(message)
+    = image_tag(avatar_url(message.user, 30), :class => 'pull-left img-responsive img-circle',:alt => message.user.full_name)
+    %h4= message.user.full_name
     = link_to('Google+', "https://plus.google.com/#{message.user.google_plus_id}?rel=author") unless message.user.google_plus_id.blank?
-    = message_created(message)
     .clearfix
     = raw message.content
     = message_tags(message)
