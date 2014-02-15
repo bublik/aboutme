@@ -23,9 +23,10 @@
       .col-md-9
         = yield
       .col-md-3
-        = render :partial => 'layouts/navigation'
-        .vpadding
-          = add_this
+        .row
+          = render partial: 'layouts/navigation'
+        .row.social
+          = render partial: 'layouts/addthis'
 
     #footer
       .container
