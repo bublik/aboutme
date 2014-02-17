@@ -1,21 +1,18 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+%h2.text-center Sign up
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: 'col-md-6 col-md-offset-3'}) do |f|
   = devise_error_messages!
-  %div
+  .form-group
     = f.label :email
-    %br/
-    = f.text_field :email
-  %div
+    = f.text_field :email, class: 'form-control'
+  .form-group
     = f.label :full_name
-    %br/
-    = f.text_field :full_name
-  %div
+    = f.text_field :full_name, class: 'form-control'
+  .form-group
     = f.label :password
-    %br/
-    = f.password_field :password
-  %div
+    = f.password_field :password, class: 'form-control'
+  .form-group
     = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Отправить"
-= render :partial => "devise/shared/links"
+    = f.password_field :password_confirmation, class: 'form-control'
+  .form-group= f.submit "Отправить", class: 'btn btn-primary col-md-12'
+.col-md-6.col-md-offset-3
+  = render :partial => "devise/shared/links"
