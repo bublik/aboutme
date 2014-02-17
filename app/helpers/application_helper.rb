@@ -23,14 +23,20 @@ module ApplicationHelper
     content_for(:keywords) { page_keywords }
   end
 
-  #size 20,40,80,160,200
+  # size 20,40,80,160,200
   def avatar_url(user, size = 48)
     if user.avatar_url.present?
       user.avatar_url
     else
       default_url = "#{root_url}images/me.jpeg"
       gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
-      "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=
+      #{size}&d=
+      #{CGI.escape(default_url)}"
     end
+  end
+
+  def icon(gliph_name)
+    content_tag(:i, '', class: "glyphicon glyphicon-#{gliph_name}")
   end
 end
