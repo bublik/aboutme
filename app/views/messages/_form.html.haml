@@ -14,7 +14,7 @@
   /   = f.text_field :title
   .form-group
     = f.label :content
-    = f.cktext_area :content, :toolbar=>'Easy', :width=>'700px', :height=>'200px', class: 'form-control'
+    = f.cktext_area :content, ckeditor: {toolbar: 'mini'}, class: 'form-control'
   .form-group
     = f.label :tags
     = text_field_tag :tags, params[:tags] || @message.tag_list, :size => 30, class: 'form-control'
