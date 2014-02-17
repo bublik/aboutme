@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor/init
+//= require bootstrap
 
 $(document).ready( function(){
   //$("button, input:submit, #header a, .pagination a, .pagination span")

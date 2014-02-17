@@ -1,8 +1,11 @@
-.ui-widget
-  %h4.ui-widget-header.ui-corner-top
-    .right= new_category_link if user_signed_in?
-    = t('.categories')
-  .ui-widget-content.ui-corner-bottom
-    = navigation_categories
-    
+%h4= t('.categories')
+%table
+  - Category.all.each do |category|
+    %tr
+      %td= link_to(h(category.title), category_messages_path(category), :title => category.title, class: "pull-left")
+      - if user_signed_in? && current_user.admin?
+        %td= link_to(icon('pencil'), edit_category_path(category), class: 'btn text-success')
+        %td= link_to(icon('remove'), category, :confirm => 'Are you sure?', :method => :delete, class: 'btn text-danger')
+- if user_signed_in? && current_user.admin?
+  =link_to(icon('plus')+'Добавить раздел',new_category_path, class: 'btn btn-primary')
     

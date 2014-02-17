@@ -1,0 +1,15 @@
+/*
+*= require_self
+*= require_tree .
+*/
+@import "bootstrap";
+
+.message {
+  .name {
+    margin: 25px 35px;
+  }
+}
+
+.row.social {
+  margin-top: 10%;
+}

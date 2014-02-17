@@ -23,33 +23,20 @@ module ApplicationHelper
     content_for(:keywords) { page_keywords }
   end
 
-  def add_this
-    '<script type="text/javascript"> var addthis_config = { ui_language: "ru"} </script>
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style ">
-    <a class="addthis_button_vk" fb:like:layout="button_count"></a>
-    <a class="addthis_button_facebook"></a>
-    <a class="addthis_button_twitter"></a>
-    <a class="addthis_button_google"></a>
-    <a class="addthis_button_mymailru"></a>
-    <a class="addthis_button_delicious"></a>
-    <a class="addthis_button_livejournal"></a>
-    <a class="addthis_button_bobrdobr"></a>
-    <a class="addthis_counter addthis_pill_style"></a>
-    </div>
-    <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=rebisall"></script>
-    <!-- AddThis Button END -->'.html_safe
-  end
-
-  #size 20,40,80,160,200
+  # size 20,40,80,160,200
   def avatar_url(user, size = 48)
     if user.avatar_url.present?
       user.avatar_url
     else
       default_url = "#{root_url}images/me.jpeg"
       gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
-      "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=
+      #{size}&d=
+      #{CGI.escape(default_url)}"
     end
+  end
+
+  def icon(gliph_name)
+    content_tag(:i, '', class: "glyphicon glyphicon-#{gliph_name}")
   end
 end

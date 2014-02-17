@@ -1,0 +1,16 @@
+.message.row
+  .col-md-12
+    %h2.page-header= link_to(message.title, message)
+    .pull-right
+      = message_created(message)
+    = image_tag(avatar_url(message.user, 30), :class => 'pull-left img-responsive img-circle',:alt => message.user.full_name)
+    %h4.name= message.user.full_name
+    = link_to('Google+', "https://plus.google.com/#{message.user.google_plus_id}?rel=author") unless message.user.google_plus_id.blank?
+    .clearfix
+    = raw message.content
+    = message_tags(message)
+    .message-actions
+      - if current_user && ((message.user_id == current_user.id) || current_user.admin?)
+        = link_to(t('edit'), edit_message_path(message))
+        = link_to(t('destroy'), message, confirm: t('are_you_sure'), method: :delete)
+

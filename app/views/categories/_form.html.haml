@@ -1,5 +1,7 @@
-= form_for @category do |f|
-  .field
-    = f.text_field :title
-  .actions
-    = f.submit
+= form_for(@category, html: {class: 'form-inline'}) do |f|
+  .form-group
+    .col-md-6
+      = f.text_field :title, class: 'form-control'
+  .form-group
+    .col-md-6
+      = f.submit class: "btn btn-default"

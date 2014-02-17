@@ -1,7 +1,7 @@
-!!! 1.1
-%html{ "xml:lang" => "en", :lang => "ru", :xmlns => "http://www.w3.org/1999/xhtml"}
+!!! 5
+%html{:lang => "ru"}
   %head
-    %meta{ :content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-type'}
+    %meta{:charset => 'utf-8'}
     %meta{:name => 'keywords', :lang => "ru", :content => yield(:keywords) +' '+ APP_CONFIG['keywords']}
     %meta{:name => 'description', :lang => "ru", :content => yield(:description) +' '+ APP_CONFIG['description']}
     %link{:rel => 'shortcut icon', :href => '/images/favicon.gif'}
@@ -14,44 +14,24 @@
     - unless APP_CONFIG['google_analytics_uacct'].blank?
       :javascript
         window.google_analytics_uacct = '#{APP_CONFIG['google_analytics_uacct']}';
-    #container.container
-      = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
-      #header.top
-        = render :partial => 'layouts/header'
-        = render_flash_messages
-      .navigation
-        = render :partial => 'layouts/navigation'
-        .vpadding= add_this
+    = link_to(image_tag('forkme_right_red_aa0000.png', :style => 'position: absolute; top: 0; right: 0; border: 0; z-index: 1;', :alt => 'Fork me on GitHub'), 'https://github.com/bublik/aboutme')
+    = render :partial => 'layouts/header'
+    .container
+      .row= render_flash_messages
+    .container
+      .col-md-9= yield
+      .col-md-3
+        .row= render 'layouts/navigation'
+        .row.social= render partial: 'layouts/addthis'
 
-      .page= yield
-
-      #footer.clear.bottom.small
-        &copy; 2010
-        |
-        = link_to('LighCraft', 'http://lightcraft.com.ua')
+    #footer
+      .container
+        .col-md-12.text-center
+          &copy; 2010-2014
+          |
+          = link_to('LighCraft', 'http://lightcraft.com.ua')
 
     = stylesheet_link_tag 'application'
-    :javascript
-      window.___gcfg = {lang: 'ru'};
-
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-
-    /[if lt IE 8]
-      = stylesheet_link_tag 'ie'
-    - unless APP_CONFIG['google_analytics_uacct'].blank?
-      :javascript
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '#{APP_CONFIG['google_analytics_uacct']}']);
-        _gaq.push(['_setDomainName', 'none']);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    -cache do
+      = render partial: 'layouts/google_analytics'
+      = render partial: 'layouts/google_plus'

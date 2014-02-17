@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   attr_accessible :full_name, :email, :password, :password_confirmation, :remember_me, :google_plus_id
 
   validates_uniqueness_of :email, :case_sensitive => false
-  before_create :ensure_authentication_token
+  # before_create :ensure_authentication_token!
 
   def admin?
     self.has_role?(:admin)
