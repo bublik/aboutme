@@ -1,16 +1,15 @@
-%h2 Авторизация
-= form_for(resource, :as => resource_name, :url => user_session_path) do |f|
-  %div
+%h2.text-center Авторизация
+= form_for(resource, :as => resource_name, :url => user_session_path, html: {class: 'col-md-6 col-md-offset-3'}) do |f|
+  .form-group
     = f.label :email
-    %br/
-    = f.text_field :email
-  %div
+    = f.text_field :email, class: 'form-control'
+  .form-group
     = f.label :password
-    %br/
-    = f.password_field :password
+    = f.password_field :password, class: 'form-control'
   - if devise_mapping.rememberable?
-    %p
-      = f.check_box :remember_me
+    .checkbox
       = f.label :remember_me, 'запомнить'
-  %div= f.submit "Залогиниться"
-= render :partial => 'devise/shared/links'
+      = f.check_box :remember_me
+  .form-group= f.submit "Войти", class: 'btn btn-primary col-md-12'
+.col-md-6.col-md-offset-3
+  = render :partial => 'devise/shared/links'

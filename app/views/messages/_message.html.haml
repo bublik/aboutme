@@ -10,7 +10,7 @@
     = raw message.content
     = message_tags(message)
     .message-actions
-      - if (message.user_id == current_user.id) || current_user.admin?
+      - if current_user && ((message.user_id == current_user.id) || current_user.admin?)
         = link_to(t('edit'), edit_message_path(message))
         = link_to(t('destroy'), message, confirm: t('are_you_sure'), method: :delete)
 
