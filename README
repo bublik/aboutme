@@ -33,7 +33,7 @@ you can add own gems to bundle directory
 
 2.1)
   rake db:seed #required in development mode
-  # will test created user
+  # will be created test user
   # :email => "admin@email.com"
   # :password => "administrator"
   or create new user from web
