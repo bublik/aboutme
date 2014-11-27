@@ -4,8 +4,8 @@ module ApplicationHelper
   ## Output flash messages
   def render_flash_messages
     content_tag :div, :id => 'flasher' do
-      flash.collect do |key,msg|
-        content_tag(:div, msg.html_safe, :class => "#{key} ui-state-active" )
+      flash.collect do |key, msg|
+        content_tag(:div, msg.html_safe, :class => "alert #{bootstrap_class_for(key)}", :role => 'alert')
       end.join.html_safe
     end unless flash.blank?
   end
@@ -37,6 +37,23 @@ module ApplicationHelper
   end
 
   def icon(gliph_name)
-    content_tag(:i, '', class: "glyphicon glyphicon-#{gliph_name}")
+    content_tag(:i, '', :class => "glyphicon glyphicon-#{gliph_name}")
+  end
+
+
+  def bootstrap_class_for(flash_type)
+    case flash_type
+      when :success
+        "alert-success"
+      when :error
+        "alert-error"
+      when :alert
+        "alert-block"
+      when :notice
+        "alert-info"
+      else
+        flash_type.to_s
+    end
   end
 end
+

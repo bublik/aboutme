@@ -9,8 +9,7 @@
     .clearfix
     = raw message.content
     = message_tags(message)
-    .message-actions
+    %p.message-actions
       - if current_user && ((message.user_id == current_user.id) || current_user.admin?)
-        = link_to(t('edit'), edit_message_path(message))
-        = link_to(t('destroy'), message, confirm: t('are_you_sure'), method: :delete)
-
+        = link_to(t('edit'), edit_message_path(message), class: 'btn btn-info btn-xs')
+        = link_to(t('destroy'), message, confirm: t('are_you_sure'), method: :delete, class: 'btn btn-warning btn-xs')

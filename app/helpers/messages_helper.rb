@@ -14,7 +14,7 @@ module MessagesHelper
   end
 
   def message_tags(message)
-    message.tag_list.collect { |tag| link_to(tag, msg_tag_path(tag), class: 'btn btn-default') }.join(' ').html_safe
+    message.tag_list.collect { |tag| link_to(tag, msg_tag_path(tag), class: 'label label-default') }.join(' ').html_safe
   end
 
 end
